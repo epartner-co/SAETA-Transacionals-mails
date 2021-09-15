@@ -1,0 +1,404 @@
+{
+  "orders": [
+    {
+      "package": null,
+      "subjectItemAttachment": {
+        "item": "PantalÃ³n Jogger, Col...",
+        "totalItems": 1
+      },
+      "cancellationReason": null,
+      "items": [
+        {
+          "additionalInfo": {
+            "categoriesIds": "/2/32/",
+            "productClusterId": "137,243,259,283,354,370,375,377,380,407,408,411,418,422,435,437,440,453,454,455,462,464,467,471,473,474,477",
+            "commercialConditionId": "1",
+            "dimension": {
+              "cubicweight": 0.5208,
+              "height": 50,
+              "length": 50,
+              "weight": 1,
+              "width": 1
+            },
+            "brandName": "Racketball",
+            "brandId": "2000002",
+            "offeringInfo": null,
+            "offeringType": null,
+            "offeringTypeId": null
+          },
+          "sellerSku": "9709",
+          "priceTable": null,
+          "priceValidUntil": "2022-08-20T13:42:28Z",
+          "callCenterOperator": null,
+          "commission": 0,
+          "freightCommission": 0,
+          "taxCode": "",
+          "catalogProvider": "vrn:vtex.catalog-api-proxy:-:racketball:master:/proxy/authenticated/catalog/pvt/sku/stockkeepingunitbyid/9709",
+          "uniqueId": "021D657F44A84F1B987E50BB1C232BCC",
+          "id": "9709",
+          "productId": "98588",
+          "productRefId": "42689-VDE MILITAR",
+          "refId": "364876",
+          "ean": "7701650853567",
+          "name": "PantalÃ³n Jogger, Color Vde Militar Para Mujer PantalÃ³n Jogger,  Color Vde Militar  Para Mujer  Talla -   S",
+          "skuName": "PantalÃ³n Jogger,  Color Vde Militar  Para Mujer  Talla -   S",
+          "modalType": null,
+          "parentItemIndex": null,
+          "parentAssemblyBinding": null,
+          "assemblies": [],
+          "tax": 0,
+          "price": 6990000,
+          "listPrice": 6990000,
+          "manualPrice": null,
+          "manualPriceAppliedBy": null,
+          "sellingPrice": 6990000,
+          "rewardValue": 0,
+          "isGift": false,
+          "preSaleDate": null,
+          "productCategoryIds": "/2/32/",
+          "productCategories": {
+            "2": "Mujer",
+            "32": "Joggers"
+          },
+          "quantity": 1,
+          "seller": "1",
+          "sellerChain": ["1"],
+          "imageUrl": "http://racketball.vteximg.com.br/arquivos/ids/189796-898-1196/42689-PANTALON-JOGGER-VDE-MILITAR-MUJER-JOGGERS-RACKETBALL-7701650853567-1.jpg?v=637496551455570000",
+          "detailUrl": "/pantalon-jogger--color-vde-militar--para-mujer-42689-vde-militar--/p",
+          "components": [],
+          "bundleItems": [],
+          "attachments": [],
+          "attachmentOfferings": [],
+          "offerings": [],
+          "priceTags": [],
+          "availability": "available",
+          "measurementUnit": "un",
+          "unitMultiplier": 1,
+          "manufacturerCode": "",
+          "priceDefinition": {
+            "calculatedSellingPrice": 6990000,
+            "total": 6990000,
+            "sellingPrices": [
+              {
+                "value": 6990000,
+                "quantity": 1
+              }
+            ]
+          }
+        }
+      ],
+      "sellers": [
+        {
+          "subSellerId": "1",
+          "fulfillmentEndpoint": "http://fulfillment.vtexcommerce.com.br/api/fulfillment?sc=1&an=racketball",
+          "id": "1",
+          "name": "Racketball S.A.",
+          "logo": ""
+        }
+      ],
+      "giftRegistryData": null,
+      "receiptData": null,
+      "contextData": null,
+      "marketPlaceOrderId": "",
+      "marketPlaceOrderGroup": null,
+      "marketplaceServicesEndpoint": null,
+      "orderFormId": "8feb62d62b2a41e7afc210dfddbafcdd",
+      "sequence": "557317",
+      "affiliateId": "",
+      "status": "",
+      "callCenterOperator": "",
+      "userProfileId": "f3b0ceaa-29e0-449f-afc0-f62ef5884e3c",
+      "hostName": "racketball",
+      "creationVersion": null,
+      "creationEnvironment": null,
+      "lastChangeVersion": null,
+      "workflowInstanceId": null,
+      "marketplacePaymentValue": null,
+      "orderId": "1155582689030-01",
+      "orderGroup": "1155582689030",
+      "state": "payment-pending",
+      "isCheckedIn": false,
+      "sellerOrderId": "00-1155582689030-01",
+      "storeId": null,
+      "checkedInPickupPointId": null,
+      "value": 7990000,
+      "totals": [
+        {
+          "id": "Items",
+          "name": "Total de los items",
+          "value": 6990000
+        },
+        {
+          "id": "Discounts",
+          "name": "Total de descuentos",
+          "value": 0
+        },
+        {
+          "id": "Shipping",
+          "name": "Costo total del envÃ­o",
+          "value": 1000000
+        },
+        {
+          "id": "Tax",
+          "name": "Costo total del cambio",
+          "value": 0
+        }
+      ],
+      "clientProfileData": {
+        "email": "bb3332ec7c9d4151b46edca7504776b8@ct.vtex.com.br",
+        "firstName": "Jessica",
+        "lastName": "Paz",
+        "document": "1085302394",
+        "documentType": "cedulaCOL",
+        "phone": "+573225097985",
+        "corporateName": null,
+        "tradeName": null,
+        "corporateDocument": null,
+        "stateInscription": null,
+        "corporatePhone": null,
+        "isCorporate": false,
+        "profileCompleteOnLoading": true,
+        "profileErrorOnLoading": false,
+        "customerClass": null
+      },
+      "ratesAndBenefitsData": {
+        "rateAndBenefitsIdentifiers": [],
+        "teaser": []
+      },
+      "shippingData": {
+        "address": {
+          "addressType": "residential",
+          "receiverName": "Jessica Paz",
+          "addressId": "4863585234495",
+          "isDisposable": false,
+          "postalCode": "52001",
+          "city": "Pasto",
+          "state": "NARIÃ‘O",
+          "country": "COL",
+          "street": "Carrera 7 # 7a - 101",
+          "number": null,
+          "neighborhood": "CATAMBUCO",
+          "complement": null,
+          "reference": null,
+          "geoCoordinates": [-75.5768051147461, 6.2539238929748535]
+        },
+        "logisticsInfo": [
+          {
+            "itemIndex": 0,
+            "selectedSla": "Coordinadora Pago Normal de 2-4 dÃ­as hÃ¡biles,  segÃºn cobertura. En poblaciones especiales, corregimientos de difÃ­cil acceso, puede tardar hasta 8 dÃ­as hÃ¡biles. Actualmente, tenemos alto flujo de pedidos, Te pedimos un poco de paciencia con nuestros tiempos de entrega, que pueden llegar a ser de hasta 10 dias habiles.",
+            "selectedDeliveryChannel": "delivery",
+            "addressId": "4863585234495",
+            "slas": [
+              {
+                "id": "Coordinadora Pago Normal de 2-4 dÃ­as hÃ¡biles,  segÃºn cobertura. En poblaciones especiales, corregimientos de difÃ­cil acceso, puede tardar hasta 8 dÃ­as hÃ¡biles. Actualmente, tenemos alto flujo de pedidos, Te pedimos un poco de paciencia con nuestros tiempos de entrega, que pueden llegar a ser de hasta 10 dias habiles.",
+                "deliveryChannel": "delivery",
+                "name": "Coordinadora Pago Normal de 2-4 dÃ­as hÃ¡biles,  segÃºn cobertura. En poblaciones especiales, corregimientos de difÃ­cil acceso, puede tardar hasta 8 dÃ­as hÃ¡biles. Actualmente, tenemos alto flujo de pedidos, Te pedimos un poco de paciencia con nuestros tiempos de entrega, que pueden llegar a ser de hasta 10 dias habiles.",
+                "deliveryIds": [
+                  {
+                    "courierId": "1",
+                    "warehouseId": "T02GP",
+                    "dockId": "T02GP",
+                    "courierName": "Coordinadora",
+                    "quantity": 1,
+                    "kitItemDetails": []
+                  }
+                ],
+                "shippingEstimate": "1bd",
+                "shippingEstimateDate": null,
+                "lockTTL": "12d",
+                "availableDeliveryWindows": [],
+                "deliveryWindow": null,
+                "price": 1000000,
+                "listPrice": 1000000,
+                "tax": 0,
+                "pickupStoreInfo": {
+                  "isPickupStore": false,
+                  "friendlyName": null,
+                  "address": null,
+                  "additionalInfo": null,
+                  "dockId": null
+                },
+                "pickupPointId": null,
+                "pickupDistance": 0,
+                "polygonName": null,
+                "transitTime": "1bd"
+              }
+            ],
+            "shipsTo": ["COL"],
+            "itemId": "9709",
+            "deliveryChannels": [
+              {
+                "id": "delivery"
+              }
+            ]
+          }
+        ],
+        "selectedAddresses": [
+          {
+            "addressType": "residential",
+            "receiverName": "Jessica Paz",
+            "addressId": "4863585234495",
+            "isDisposable": false,
+            "postalCode": "52001",
+            "city": "Pasto",
+            "state": "NARIÃ‘O",
+            "country": "COL",
+            "street": "Carrera 7 # 7a - 101",
+            "number": null,
+            "neighborhood": "CATAMBUCO",
+            "complement": null,
+            "reference": null,
+            "geoCoordinates": [-75.5768051147461, 6.2539238929748535]
+          }
+        ],
+        "availableAddresses": [
+          {
+            "addressType": "residential",
+            "receiverName": "Jessica Paz",
+            "addressId": "4863585234495",
+            "isDisposable": false,
+            "postalCode": "52001",
+            "city": "Pasto",
+            "state": "NARIÃ‘O",
+            "country": "COL",
+            "street": "Carrera 7 # 7a - 101",
+            "number": null,
+            "neighborhood": "CATAMBUCO",
+            "complement": null,
+            "reference": null,
+            "geoCoordinates": [-75.5768051147461, 6.2539238929748535]
+          }
+        ],
+        "pickupPoints": []
+      },
+      "paymentData": {
+        "giftCards": [],
+        "transactions": [
+          {
+            "isActive": true,
+            "transactionId": "67FEEE87954F43C09E26DDAE58D8C113",
+            "merchantName": "RACKETBALL",
+            "payments": [
+              {
+                "id": "A9968D3EC66347729340E9437B9A9051",
+                "paymentSystem": "520037",
+                "paymentSystemName": "EFECTY",
+                "value": 7990000,
+                "installments": 1,
+                "connectorResponses": {
+                  "Tid": "16489613283",
+                  "ReturnCode": null,
+                  "Message": null,
+                  "authId": "16489613283",
+                  "acquirer": "MercadoPagoV1",
+                  "message": "pending_waiting_payment"
+                },
+                "referenceValue": 7990000,
+                "cardHolder": null,
+                "cardNumber": null,
+                "firstDigits": null,
+                "lastDigits": null,
+                "cvv2": null,
+                "expireMonth": null,
+                "expireYear": null,
+                "url": "https://www.mercadopago.com/mco/payments/ticket/helper?payment_id=16489613283&payment_method_reference_id=9839484312&caller_id=785695013&hash=88f444cb-4914-4320-92c3-415832b543be",
+                "koinUrl": null,
+                "tid": "16489613283",
+                "redemptionCode": null,
+                "giftCardId": null,
+                "giftCardProvider": null,
+                "giftCardAsDiscount": null,
+                "group": "bankInvoice",
+                "dueDate": null,
+                "accountId": null,
+                "parentAccountId": null,
+                "bankIssuedInvoiceIdentificationNumber": null,
+                "bankIssuedInvoiceIdentificationNumberFormatted": null,
+                "bankIssuedInvoiceBarCodeNumber": null,
+                "bankIssuedInvoiceBarCodeType": null,
+                "billingAddress": null
+              }
+            ],
+            "sharedTransaction": false
+          }
+        ]
+      },
+      "clientPreferencesData": {
+        "locale": "es-CO",
+        "optinNewsLetter": true
+      },
+      "commercialConditionData": null,
+      "marketingData": null,
+      "storePreferencesData": {
+        "countryCode": "COL",
+        "saveUserData": false,
+        "timeZone": "SA Pacific Standard Time",
+        "currencyCode": "COP",
+        "currencyLocale": 9226,
+        "currencySymbol": "$",
+        "currencyFormatInfo": {
+          "currencyDecimalDigits": 2,
+          "currencyDecimalSeparator": ",",
+          "currencyGroupSeparator": ".",
+          "currencyGroupSize": 3,
+          "startsWithCurrencySymbol": true
+        }
+      },
+      "openTextField": null,
+      "invoiceData": null,
+      "itemMetadata": null,
+      "taxData": null,
+      "customData": null,
+      "hooksData": null,
+      "changeData": null,
+      "subscriptionData": null,
+      "salesChannel": "1",
+      "followUpEmail": "dde6d0ca5f1846468d16db7b30ff0113@ct.vtex.com.br",
+      "creationDate": "2021-08-20T13:44:48.8447025Z",
+      "lastChange": "2021-08-20T13:44:57.2517383Z",
+      "timeZoneCreationDate": "2021-08-20T08:44:48.8447025",
+      "timeZoneLastChange": "2021-08-20T08:44:57.2517383",
+      "isCompleted": true,
+      "merchantName": null,
+      "userType": "",
+      "roundingError": 0,
+      "allowEdition": false,
+      "allowCancellation": false,
+      "isUserDataVisible": false,
+      "allowChangeSeller": false
+    }
+  ],
+  "ordersUrl": "http://www.racketball.com.co/account#/orders",
+  "orderGroup": "1155582689030",
+  "subjectItemAttachment": {
+    "item": "PantalÃ³n Jogger, Col...",
+    "totalItems": 1
+  },
+  "split": false,
+  "totalValue": 7990000,
+  "callCenterOperatorData": null,
+  "_accountInfo": {
+    "MainAccountName": "racketball",
+    "AccountName": "racketball",
+    "Cnpj": "8110272392",
+    "Id": "809167e1-3a08-4544-839c-63c4bdea76c8",
+    "IsActive": true,
+    "IsOperating": true,
+    "CreationDate": "2018-10-08T21:55:40",
+    "OperationDate": "2018-12-18T11:55:08",
+    "CompanyName": "Racketball S.A.",
+    "TradingName": "Racketball S.A.",
+    "City": null,
+    "Complement": null,
+    "Country": null,
+    "State": null,
+    "Address": null,
+    "District": null,
+    "Number": null,
+    "PostalCode": null,
+    "Licences": null,
+    "ParentAccountName": null,
+    "InactivationDate": null,
+    "Platform": "vtex"
+  }
+}
