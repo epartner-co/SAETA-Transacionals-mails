@@ -6,7 +6,7 @@ Follow the steps for edit the mails:
 1. Clone or Fork the [templates mail repository](https://github.com/epartner-co/transactional-mails)
 2. Add or edit the style using the guide bellow ⬇
 3. Be carefully with the **Considerations**
-4. The [cart abandoned template]() use the same steps for edit, but the HTML structure is different
+4. The [cart abandoned template](https://gist.github.com/HajdukSanchez/2302bac37dec6f49b5e1c2343d20f5b3) use the same steps for edit, but the HTML structure is different
 
 The templates mails are based on ```global.html```
 
