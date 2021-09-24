@@ -1,0 +1,1040 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{_accountInfo.TradingName}}</title>
+
+  <!-- * Style Sheet -->
+  <style>
+    :root {
+      --font-family: 'Titillium Web', sans-serif;
+      --font-family-2: 'Roboto', sans-serif;
+      --color-white: #ffffff;
+      --color-black: #000000;
+      --color-green: #5cca07;
+      --color-red: #ff0000;
+      --color-yellow: #f5b325;
+      --color-yellow-2: #ffc700;
+      --color-gray: #8b8b8b;
+      --color-gray-2: #b3b1b1;
+      --color-gray-3: #616161;
+      --color-gray-light-2: #faf8f4;
+      --color-gray-light: #f1f1f1;
+      --color-gray-light-3: #ededed;
+      --color-gray-dark: #3c3c3c;
+    }
+
+    /* ! Globals */
+    html {
+      background-color: var(--color-gray-light);
+    }
+
+    body {
+      font-family: var(--font-family);
+      box-sizing: border-box;
+    }
+
+    /* ! Specifics */
+    .Table {
+      max-width: 40rem;
+    }
+
+    .Table__row {
+      background-color: var(--color-gray-light-2);
+    }
+
+    /* ! Header */
+    .Header {
+      background-color: var(--color-yellow);
+    }
+
+    .Header__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1rem;
+    }
+
+    .Header__logo-container {
+      width: 40%;
+    }
+
+    .Header__container--bottom {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: var(--color-yellow);
+    }
+
+    .Header__link {
+      padding: 0 2rem;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: capitalize;
+      color: var(--color-white);
+    }
+
+    /* ! Main Banner */
+    .Banner__image {
+      width: 100%;
+    }
+
+    /* ! Text top */
+    .Text {
+      margin: 0;
+      font-size: 24px;
+      line-height: 40px;
+      text-align: center;
+      color: var(--color-black);
+    }
+
+    .Text--user {
+      padding: 3rem 0 0;
+      font-weight: 500;
+    }
+
+    .Text--description {
+      margin-right: 2rem;
+      margin-left: 2rem;
+      font-size: 14px;
+      line-height: 25px;
+      color: black;
+    }
+
+    .horizontal-line {
+      width: 15%;
+    }
+
+    .horizontal-line--top {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .horizontal-line--bottom {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ! Breadcrumb images top */
+    .Breadcrumb__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 2rem;
+    }
+
+    .Breadcrumb__item {
+      z-index: 2;
+    }
+
+    .Breadcrumb__item img {
+      width: 115px;
+    }
+
+    .Breadcrumb__item::after {
+      content: '';
+      display: flex;
+      width: 6rem;
+      height: 0.13rem;
+      transform: translate(7.2rem, -7.5rem);
+      z-index: 1;
+      background: var(--color-gray-2);
+    }
+
+    .Breadcrumb__item:last-child::after {
+      display: none;
+    }
+
+    .Breadcrumb__item--good::after {
+      background-color: var(--color-green);
+    }
+
+    .Breadcrumb__item--wait::after {
+      background-color: var(--color-yellow-2);
+    }
+
+    .Breadcrumb__item--bad::after {
+      background-color: var(--color-red);
+    }
+
+    .Breadcrumb__text {
+      color: var(--color-gray-2);
+    }
+
+    .Breadcrumb__text--good {
+      font-weight: bold;
+      color: var(--color-green);
+    }
+
+    .Breadcrumb__text--wait {
+      font-weight: bold;
+      color: var(--color-yellow-2);
+    }
+
+    .Breadcrumb__text--bad {
+      font-weight: bold;
+      color: var(--color-red);
+    }
+
+    /* ! Order number */
+    .Order-number {
+      padding: 2rem;
+    }
+
+    .Order-number__text {
+      margin: 0;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    /* ! Boxes payment method and address shipping */
+    .Boxes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Boxes__title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .Boxes__title {
+      margin: 1.6rem 2rem 1.3rem 2rem;
+      padding-bottom: 0.5rem;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--color-gray-dark);
+    }
+
+    .Boxes__title--text {
+      border-bottom: 0.1rem solid var(--color-gray-light-3);
+    }
+
+    .Boxes__title--left {
+      width: 70%;
+      margin-bottom: 0;
+    }
+
+    .Boxes__title--right {
+      margin-bottom: 0;
+      margin-right: 0;
+      width: 30%;
+      text-align: center;
+    }
+
+    .Boxes__container {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+      width: 50%;
+      height: 12rem;
+      max-height: 12rem;
+      font-size: 14px;
+      border-radius: 20px;
+      background-color: var(--color-white);
+    }
+
+    .Boxes__container--left {
+      margin-right: 0.5rem;
+    }
+
+    .Boxes__container--right {
+      margin-left: 0.5rem;
+    }
+
+    .Address__container {
+      margin: 0 2rem 1rem 2rem;
+      text-align: center;
+    }
+
+    .Payment__container {
+      padding: 1rem;
+      padding-top: 0;
+      text-align: center;
+    }
+
+    .Payment__data {
+      margin: 0 2rem;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .Payment__extra-data {
+      padding-bottom: 0.25rem;
+      font-size: 1rem;
+      line-height: 20px;
+      border-bottom: 0.1rem solid black;
+    }
+
+    .Payment__extra-data--bottom {
+      padding-top: 0.25rem;
+    }
+
+    /* ! Product list shipped */
+    .Products-list {
+      padding: 20px;
+      padding-bottom: 2rem;
+      line-height: 20px;
+      font-size: 14px;
+    }
+
+    .Products-list__container {
+      padding: 1rem;
+      border-radius: 20px;
+      background: var(--color-white);
+    }
+
+    .Products-list__box {
+      padding: 1rem;
+    }
+
+    .Product {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 2rem;
+      font-weight: 700;
+      border-bottom: 0.1rem solid var(--color-gray-light-3);
+    }
+
+    .Product:last-child {
+      border-bottom: 0;
+    }
+
+    .Product__image-container {
+      padding-right: 1rem;
+      width: 20%;
+    }
+
+    .Product__image-container img {
+      width: 100%;
+    }
+
+    .Product__text {
+      padding: 1.3rem;
+      width: 55%;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    .Product__description {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25%;
+    }
+
+    /* ! Payment information and values */
+    .Payment {
+      padding: 2rem;
+      width: 100%;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .Payment-info__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 3rem;
+    }
+
+    .Payment-info__text {
+      padding-right: 2rem;
+      font-size: 10px;
+      color: var(--color-gray);
+    }
+
+    .Payment-info__values {
+      margin: 0 2rem 0 0;
+      border-top: 0.1rem solid var(--color-black);
+      border-bottom: 0.1rem solid var(--color-black);
+    }
+
+    .Value {
+      height: 1rem;
+    }
+
+    .Value__data {
+      color: var(--color-black);
+      font-weight: bold;
+    }
+
+    .Value__price {
+      line-height: 20px;
+      text-align: right;
+      font-size: 14px;
+      color: var(--color-gray-dark);
+    }
+
+    .Value__price--total {
+      color: var(--color-black);
+      font-weight: bold;
+    }
+
+    /* ! Button cart abandoned */
+    .Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .Button__link {
+      padding: 1rem 5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--color-gray-dark);
+      background-color: var(--color-yellow);
+    }
+
+    /* ! Icons container bottom */
+    .Icons__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background: var(--color-white);
+    }
+
+    .Icons__item {
+      padding: 0 1rem;
+      height: 13rem;
+      text-align: center;
+    }
+
+    .Icons {
+      font-family: var(--font-family-2);
+    }
+
+    .Icon__title {
+      margin-bottom: 0;
+      text-transform: uppercase;
+      color: var(--color-gray-dark);
+    }
+
+    .Icon__description {
+      font-size: 11px;
+      color: var(--color-gray-dark);
+    }
+
+    /* ! Footer */
+    .Footer {
+      padding: 2rem;
+      background-color: var(--color-gray-3);
+    }
+
+    .Footer__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .Footer__container--bottom {
+      align-items: center;
+      border-top: 0.1rem solid rgba(192, 197, 204, 0.22);
+    }
+
+    .Footer__box--left {
+      width: 40%;
+    }
+
+    .Footer__box--right {
+      width: 70%;
+    }
+
+    .Footer__title {
+      color: var(--color-white);
+    }
+
+    .Footer__title--sika {
+      margin-bottom: 1rem;
+      font-size: 20px;
+    }
+
+    .Footer__title--categories {
+      text-transform: uppercase;
+    }
+
+    .Footer__text {
+      margin: 0 0 0.5rem;
+      font-weight: 300;
+      color: var(--color-white);
+    }
+
+    .Footer__text a {
+      text-decoration: none;
+      font-size: 12px;
+      color: var(--color-white);
+    }
+
+    .Footer__categories {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .Footer__categories-box {
+      padding: 0 0 0 0.5rem;
+      width: 50%;
+      height: 100%;
+      border-left: 0.2rem solid var(--color-white);
+    }
+
+    .Footer__info-container {
+      text-decoration: none;
+      font-size: 12px;
+      color: var(--color-white);
+    }
+
+    .Footer__info-container a {
+      color: var(--color-white);
+      text-decoration: none;
+    }
+
+    .Footer__info-container a:hover {
+      text-decoration: underline;
+    }
+
+    /* ! Socials Buttons Bottom */
+    .Socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .Socials__text {
+      font-size: 14px;
+      color: var(--color-white);
+    }
+
+    .Socials__icon--facebook {
+      padding: 1rem 0.5rem 0.5rem;
+    }
+
+    .Socials__icon--instagram {
+      padding: 1rem 0rem 0.5rem;
+    }
+  </style>
+  <!-- * / Style Sheet -->
+
+  <!-- * Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- */ Fonts -->
+</head>
+
+<body>
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <table class="Table" align="center" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+
+            <!-- * Header-->
+            <tr class="Header">
+              <td align="center">
+                <div class="Header__container Header__container--top">
+                  <a href="http://col.sika.com" class="Header__logo-container">
+                    <img src="https://sikaco.vteximg.com.br/arquivos/Logo-Sika-Template.png" alt="Logo">
+                    </img>
+                  </a>
+                </div>
+                <div class="Header__container Header__container--bottom">
+                  <a href="" class="Header__link" target="_blank" rel="noopener noreferrer">
+                    Construcción
+                  </a>
+                  <a href="" class="Header__link" target="_blank" rel="noopener noreferrer">
+                    Hogar
+                  </a>
+                  <a href="" class="Header__link" target="_blank" rel="noopener noreferrer">
+                    Industria
+                  </a>
+                  <a href="" class="Header__link" target="_blank" rel="noopener noreferrer">
+                    Cementos
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- * Banner -->
+            <tr class="Banner Table__row">
+              <td>
+                <div class="Banner__container">
+                  <img src="https://sikaco.vteximg.com.br/arquivos/Banner-Template-Mail.png" alt="Banner image" class="Banner__image" />
+                </div>
+              </td>
+            </tr>
+
+            <!-- * Top text -->
+            <tr class="Table__row">
+              <td>
+                <h1 class="Text Text--user">Hola, {{orders.0.clientProfileData.firstName}}</h1>
+                <h1 class="Text">¡Tu pago no ha sido aprobado!</h1>
+                <hr class="horizontal-line horizontal-line--top" />
+                <p class="Text Text--description">
+                  Lo sentimos mucho, el pago de tu pedido ha sido rechazado y este ha sido <br /> cancelado. Comunícate al <a href="tel:018000123123" style="text-decoration:none;color: black;">01 8000 123 123</a> para recibir informacion.
+                </p>
+                <hr class="horizontal-line horizontal-line--bottom" />
+              </td>
+            </tr>
+
+            <!-- * Images breadcrumb -->
+            <tr class="Table__row">
+              <td>
+                <div class="Breadcrumb__container">
+                  <div class="Breadcrumb__item">
+                    <img src="https://sikaco.vteximg.com.br/arquivos/Orden-Recibida.png" alt="Orden recibida logo" />
+                    <p class="Breadcrumb__text">Orden recibida</p>
+                  </div>
+                  <div class="Breadcrumb__item">
+                    <img src="https://sikaco.vteximg.com.br/arquivos/Pago-Reachazado.png" alt="Pago rechazado logo" />
+                    <p class="Breadcrumb__text Breadcrumb__text--bad">Pago Rechazado</p>
+                  </div>
+                  <div class="Breadcrumb__item">
+                    <img src="https://sikaco.vteximg.com.br/arquivos/Pedido-Enviado.png" alt="Pedido enviado logo" />
+                    <p class="Breadcrumb__text">Pedido enviado</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- * Order number info -->
+            {{#each orders}}
+            <tr class="Table__row">
+              <td class="Order-number">
+                <h2 class="Order-number__text">
+                  Número de pedido: {{orderId}}
+                </h2>
+              </td>
+            </tr>
+            {{/each}}
+
+            <!-- * Boxes whites -->
+            <tr class="Table__row">
+              <td>
+                <table style="width: 100%;">
+                  <tbody class="Boxes">
+
+                    {{#each orders}}
+                    <!-- * Box Address -->
+                    <tr class="Boxes__container Boxes__container--left">
+                      <td>
+                        {{#richShippingData shippingData}}
+                        {{#group logisticsInfo by="addessId"}}
+
+                        <div>
+                          {{#compare items.0.selectedDeliveryChannel '==' null}}
+                          <div class="Address__container">
+                            <h4 class="Boxes__title Boxes__title--text">Productos a Recibir</h4>
+                            {{#if orders.0.giftRegistryData}}
+                            {{orders.0.giftRegistryData.description}}
+                            {{else}}
+                            {{#each ../../shippingData.availableAddresses}}
+                            {{#eq ../addressId AddressId}}
+                            <strong>{{receiverName}}</strong>
+                            <br />{{street}}, {{number}}{{#if complement}} - {{complement}}{{/if}}
+                            <br />{{neighborhood}} - {{city}} - {{state}}
+                            <br />CEP {{postalCode}}
+                            {{/eq}}
+                            {{/each}}
+                            {{/if}}
+                          </div>
+                          {{/compare}}
+                          {{#eq items.0.selectedDeliveryChannel "delivery"}}
+                          <div class="Address__container">
+                            {{#if orders.0.giftRegistryData}}
+                            {{orders.0.giftRegistryData.description}}
+                            {{else}}
+                            {{#each ../../shippingData.availableAddresses}}
+                            {{#eq ../addressId AddressId}}
+                            <div>
+                              <h3 class="Boxes__title Boxes__title--text">Dirección de entrega</h3>
+                              <strong>{{receiverName}}</strong>
+                              <br />{{street}}, {{number}}{{#if complement}} - {{complement}}{{/if}}
+                              <br />{{neighborhood}} - {{city}} - {{state}}
+                              <br />CEP {{postalCode}}
+                              {{/eq}}
+                              {{/each}}
+                              {{/if}}
+                            </div>
+                          </div>
+                          {{/eq}}
+                          {{/group}}
+                          {{/richShippingData}}
+                      </td>
+                    </tr>
+                    {{/each}}
+
+                    <!-- * Box Payment -->
+                    {{#compare split "!=" true}}
+                    <tr class="Boxes__container Boxes__container--right">
+                      <td>
+                        <div class="Payment__container">
+                          <h3 class="Boxes__title Boxes__title--text">Medio de pago</h3>
+                          {{#each orders.0.paymentData.transactions}}
+                          {{#compare payments.length "==" 1}}
+                          {{#each payments}}
+                          <div class="Payment__data">
+                            {{paymentSystemName}}
+                            {{#if lastDigits}} final {{lastDigits}} {{/if}}
+                            <br />$ {{formatCurrency value}}
+                            {{#eq installments 1}}
+                            Total
+                            {{else}}
+                            en {{installments}}x
+                            {{/eq}}
+                          </div>
+                          {{/each}}
+                          {{/compare}}
+                        </div>
+                        {{#compare payments.length "!=" 1}}
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                          {{#each payments}}
+                          <tr>
+                            <td class="Payment__extra-data">
+                              {{paymentSystemName}}
+                              {{#if lastDigits}} final {{lastDigits}} {{/if}}
+                              {{#eq installments 1}}
+                              Total
+                              {{else}}
+                              en {{installments}}x
+                              {{/eq}}
+                            </td>
+                            <td class="Payment__extra-data Payment__extra-data--bottom" align="left">$ {{formatCurrency value}}</td>
+                          </tr>
+                          {{/each}}
+                        </table>
+                        {{/compare}}
+                        {{/each}}
+                      </td>
+                    </tr>
+                    {{/compare}}>
+
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+
+            <!-- * Products description -->
+            <tr class="Table__row">
+              <td class="Products-list">
+                {{#each orders}}
+                {{#richShippingData shippingData}}
+                {{#group logisticsInfo by="packageId"}}
+                {{#each items}}
+                {{#compare @index '==' 0}}
+                <div class="Products-list__container">
+                  <div>
+                    <div>
+                      {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                      {{else}}
+                      <div class="Boxes__title-container Boxes__title--text">
+                        <h4 class="Boxes__title Boxes__title--left">Producto</h4>
+                        <h4 class="Boxes__title Boxes__title--right">Cantidad | precio</h4>
+                      </div>
+                      {{/eq}}
+                      <div class="Products-list__box">
+                        {{#eq ../items.length 1}}
+                        {{#each ../../../items}}
+                        {{#compare id '==' ../../items.0.itemId}}
+                        <div class="Product">
+                          <div class="Product__image-container">
+                            <img src="{{imageUrl}}" alt="Product Image" />
+                          </div>
+                          <div class="Product__text">{{name}}</div>
+                          <div class="Product__description">
+                            {{quantity}}<p style="width:20px"></p>
+                            {{#if price}}
+                            $ {{formatCurrency price}}
+                            {{else}}
+                            Gratis
+                            {{/if}}
+                          </div>
+                        </div>
+                        {{/compare}}
+                        {{/each}}
+                        {{else}}
+                        {{../items.length}}
+                        items
+                        {{/eq}}
+                        <!-- {{#if deliveryWindow}} -->
+                        en
+                      </div>
+                      <!-- <div style="padding:10px;box-sizing: border-box; margin-bottom: .25rem; margin-top: .5rem; font-size: 1.5rem !important;">
+                      {{formatDate deliveryWindow.startDateUtc}}
+                    </div>
+                    <div style="padding:10px;box-sizing: border-box; padding-bottom: 1rem !important;">
+                      entre
+                      {{formatTime deliveryWindow.startDateUtc}}
+                      e
+                      {{formatTime deliveryWindow.endDateUtc}}
+                    </div>
+                    <div style="padding:10px">
+                      {{else}}
+                      {{#if shippingEstimateDate}}
+                      {{#eq deliveryChannel "pickup-in-point"}}
+                      a partir de
+                      {{else}}
+                      Hasta
+                      {{/eq}}
+                      {{formatDate shippingEstimateDate}}
+                      {{else}}
+                      {{#eq shippingEstimateDays "0"}}</div>
+                    <div style="padding:10px;box-sizing: border-box; padding-bottom: 1rem; margin-top: .5rem; font-size: 1.5rem !important;">
+                      {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                      a partir de hoy
+                      {{else}}
+                      hoy
+                      {{/eq}}
+                    </div>
+                    {{else}}
+                    {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                    a partir de
+                    {{else}}
+                    hasta
+                    {{/eq}}
+                    <div style="box-sizing: border-box; padding-bottom: 1rem; margin-top: .5rem; font-size: 1.5rem !important;">
+                      {{#compare shippingEstimateDays ">" "1"}}
+                      {{#eq shippingEstimateDaysType "bd"}}
+                      {{shippingEstimateDays}} días Hábiles
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "d"}}
+                      {{shippingEstimateDays}} días
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "h"}}
+                      {{shippingEstimateDays}} horas
+                      {{else}}
+                      {{shippingEstimateDays}} minutos
+                      {{/eq}}
+                      {{/eq}}
+                      {{/eq}}
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "bd"}}
+                      {{shippingEstimateDays}} día habil
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "d"}}
+                      {{shippingEstimateDays}} día
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "h"}}
+                      {{shippingEstimateDays}} hora
+                      {{else}}
+                      {{shippingEstimateDays}} minuto
+                      {{/eq}}
+                      {{/eq}}
+                      {{/eq}}
+                      {{/compare}}
+                    </div> -->
+                      {{/eq}}
+                      {{/if}}
+                      {{/if}}
+                    </div>
+
+                    <!-- <div style="box-sizing: border-box; padding-top: .5rem; padding-bottom: .5rem; padding-left: 1rem; padding-right: 1rem !important;">
+                    {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                    {{#each slas}}
+                    {{#compare ../selectedSla '==' id}}
+                    {{pickupStoreInfo.friendlyName}}
+                    {{/compare}}
+                    {{/each}}
+                    {{else}}
+                    {{#if ../../../giftRegistryData}}
+                    {{../../../giftRegistryData.description}}
+                    {{else}}
+                    {{#each ../../availableAddresses}}
+                    {{#eq ../addressId addressId}}
+                    {{street}}, {{number}}
+                    {{/eq}}
+                    {{/each}}
+                    {{/if}}
+                    {{/eq}}
+                  </div> -->
+                  </div>
+                </div>
+                {{/compare}}
+                {{/each}}
+                {{/group}}
+                {{/richShippingData}}
+                {{/each}}
+              </td>
+            </tr>
+
+            <!-- * Payment values  -->
+            {{#each orders}}
+            <tr class="Table__row">
+              <td class="Payment" align="left">
+                <div class="Payment-info__container">
+                  <div class="Payment-info__text">
+                    <p>Si seleccionaste pago contra entrega, el pago será recibido en el momento en que hagamos la entrega del pedido, recuerda tener el valor exacto ya que el transportador no tienen cambio.
+                    </p>
+                    <p>
+                      Si seleccionaste pago en efectivo a través de Baloto debes tener en cuenta estos pasos:
+                    </p>
+                    <ul>
+                      <li>
+                        Imprime el código para pago en puntos baloto en el botón imprimir comprobante y dirigido al punto baloto más cercano y realizar el pago de tu pedido.
+                      </li>
+                      <li>
+                        Recuerda que tienes 72 horas desde la confirmación de tu pedido para realizar el pago, de lo contrario tu pedido será cancelado automáticamente
+                      </li>
+                    </ul>
+                  </div>
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="Payment-info__values">
+                    <tbody style="vertical-align: middle;">
+                      {{#each totals}}
+                      {{#if value}}
+                      <tr class="Value">
+                        <td class="Value__data" align="left">
+                          {{#eq id "Items"}}Subtotal{{/eq}}
+                          {{#eq id "Discounts"}}Descuentos{{/eq}}
+                          {{#eq id "Shipping"}}Valor flete{{/eq}}
+                          {{#eq id "Tax"}}IVA{{/eq}}
+                        </td>
+                        <td class="Value__price" align="right">$ {{formatCurrency value}}</td>
+                      </tr>
+                      {{/if}}
+                      {{/each}}
+                      {{#if value}}
+                      <tr class="Value">
+                        <td class="Value__data" align="left">Total</td>
+                        <td class="Value__price Value__price--total" align="right">$ {{formatCurrency value}}</td>
+                      </tr>
+                      {{/if}}
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            {{/each}}
+
+            <!-- * Icons Data -->
+            <tr>
+              <td>
+                <div class=" Icons Icons__container">
+                  <div class="Icons__item">
+                    <div class="Icon__image">
+                      <svg width="97" height="97" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="48.839" cy="48.0968" r="48.0968" fill="#FAF8F4" />
+                        <path
+                          d="M72.5486 45.4381L60.8631 36.0389V29.6373C60.9253 28.3543 60.4762 27.0989 59.6143 26.1465C58.7524 25.1941 57.548 24.6224 56.2651 24.5566H27.3055C26.0317 24.6353 24.8401 25.2126 23.989 26.1636C23.1379 27.1146 22.6957 28.3626 22.7583 29.6373V55.0405C22.7347 56.0493 23.012 57.0422 23.5549 57.8928C24.0979 58.7433 24.8817 59.413 25.8067 59.8163C25.3388 60.9608 25.1565 62.202 25.2754 63.4328C25.3943 64.6635 25.8109 65.8468 26.4892 66.8806C27.1675 67.9144 28.0871 68.7676 29.1688 69.3667C30.2504 69.9657 31.4616 70.2926 32.6978 70.3191C33.934 70.3456 35.158 70.0709 36.2643 69.5187C37.3707 68.9666 38.326 68.1535 39.048 67.1497C39.7699 66.1459 40.2368 64.9815 40.4083 63.757C40.5799 62.5325 40.4509 61.2847 40.0325 60.1212H56.1889C55.7711 61.2723 55.6369 62.5071 55.7975 63.7211C55.9582 64.9351 56.409 66.0925 57.1119 67.0952C57.8147 68.098 58.7488 68.9167 59.8352 69.4819C60.9215 70.0471 62.1281 70.3422 63.3526 70.3422C64.5772 70.3422 65.7838 70.0471 66.8701 69.4819C67.9564 68.9167 68.8906 68.098 69.5934 67.0952C70.2962 66.0925 70.7471 64.9351 70.9077 63.7211C71.0684 62.5071 70.9341 61.2723 70.5163 60.1212H71.0244C71.6981 60.1212 72.3443 59.8535 72.8207 59.3771C73.2971 58.9007 73.5647 58.2546 73.5647 57.5808V47.4195C73.557 47.0338 73.4614 46.6549 73.2854 46.3115C73.1093 45.9682 72.8573 45.6695 72.5486 45.4381ZM68.4841 48.6389V55.0405H60.8631V42.5421L68.4841 48.6389ZM35.4599 62.6615C35.4599 63.1639 35.3109 63.6551 35.0318 64.0728C34.7526 64.4906 34.3559 64.8162 33.8917 65.0084C33.4275 65.2007 32.9168 65.251 32.424 65.153C31.9312 65.055 31.4786 64.813 31.1233 64.4578C30.768 64.1025 30.5261 63.6498 30.4281 63.1571C30.33 62.6643 30.3803 62.1535 30.5726 61.6893C30.7649 61.2252 31.0905 60.8284 31.5082 60.5493C31.926 60.2701 32.4171 60.1212 32.9196 60.1212C33.5933 60.1212 34.2394 60.3888 34.7158 60.8652C35.1923 61.3416 35.4599 61.9877 35.4599 62.6615ZM48.1615 55.0405H27.8389V29.6373H55.7825V55.0405H48.1615ZM65.9438 62.6615C65.9438 63.1639 65.7948 63.6551 65.5156 64.0728C65.2365 64.4906 64.8398 64.8162 64.3756 65.0084C63.9114 65.2007 63.4006 65.251 62.9078 65.153C62.4151 65.055 61.9624 64.813 61.6072 64.4578C61.2519 64.1025 61.01 63.6498 60.9119 63.1571C60.8139 62.6643 60.8642 62.1535 61.0565 61.6893C61.2488 61.2252 61.5744 60.8284 61.9921 60.5493C62.4099 60.2701 62.901 60.1212 63.4034 60.1212C64.0772 60.1212 64.7233 60.3888 65.1997 60.8652C65.6761 61.3416 65.9438 61.9877 65.9438 62.6615Z"
+                          fill="#F5B325" />
+                      </svg>
+                    </div>
+                    <h4 class="Icon__title">Envíos gratis</h4>
+                    <p class="Icon__description">Por compras superiores <br /> a $150.000</p>
+                  </div>
+                  <div class="Icons__item">
+                    <div class="Icon__image">
+                      <svg width="97" height="97" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="48.13" cy="48.0968" r="48.0968" fill="#FAF8F4" />
+                        <path
+                          d="M68.4524 27.7739H27.8072C25.0052 27.7739 22.7266 30.0526 22.7266 32.8546V63.3384C22.7266 66.1404 25.0052 68.4191 27.8072 68.4191H68.4524C71.2543 68.4191 73.533 66.1404 73.533 63.3384V32.8546C73.533 30.0526 71.2543 27.7739 68.4524 27.7739ZM27.8072 32.8546H68.4524V37.9352H27.8072V32.8546ZM27.8072 63.3384V48.0965H68.4549L68.4575 63.3384H27.8072Z"
+                          fill="#F5B325" />
+                        <path d="M32.8879 53.1772H48.1299V58.2579H32.8879V53.1772Z" fill="#F5B325" />
+                      </svg>
+                    </div>
+                    <h4 class="Icon__title">Paga Seguro</h4>
+                    <p class="Icon__description">Tarjetas de Crédito, PSE, Efecty <br /> y Baloto</p>
+                  </div>
+                  <div class="Icons__item">
+                    <div class="Icon__image">
+                      <svg width="98" height="97" viewBox="0 0 98 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="48.9347" cy="48.0968" r="48.0968" fill="#FAF8F4" />
+                        <path
+                          d="M71.2345 33.3661L52.182 22.8873C51.9007 22.7325 51.5848 22.6514 51.2637 22.6514C50.9426 22.6514 50.6267 22.7325 50.3454 22.8873L31.293 33.3661C30.9942 33.5306 30.7451 33.7722 30.5717 34.0658C30.3982 34.3594 30.3066 34.6941 30.3066 35.0351C30.3066 35.3761 30.3982 35.7109 30.5717 36.0044C30.7451 36.298 30.9942 36.5396 31.293 36.7041L49.3585 46.6399V67.0622L43.5742 63.8805L41.7375 67.2166L50.3454 71.9511C50.6266 72.1062 50.9425 72.1875 51.2637 72.1875C51.5849 72.1875 51.9008 72.1062 52.182 71.9511L71.2345 61.4722C71.5333 61.3079 71.7825 61.0663 71.9561 60.7727C72.1297 60.4791 72.2213 60.1443 72.2214 59.8033V35.0351C72.2213 34.6941 72.1297 34.3593 71.9561 34.0657C71.7825 33.7721 71.5333 33.5305 71.2345 33.3661ZM51.2637 26.7321L66.3627 35.0351L51.2637 43.3382L36.1647 35.0351L51.2637 26.7321ZM68.4109 58.6773L53.1689 67.0603V46.638L68.4109 38.255V58.6773Z"
+                          fill="#F5B325" />
+                        <path d="M34.1162 47.4194H18.8743V43.6089H34.1162V47.4194Z" fill="#F5B325" />
+                        <path d="M37.9265 62.6616H22.6846V58.8511H37.9265V62.6616Z" fill="#F5B325" />
+                        <path d="M41.7371 55.0405H26.4951V51.23H41.7371V55.0405Z" fill="#F5B325" />
+                      </svg>
+                    </div>
+                    <h4 class="Icon__title">Devoluciones</h4>
+                    <p class="Icon__description">Rápidos y seguros</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- * Footer information -->
+            <tr>
+              <td>
+                <div class="Footer">
+                  <div class="Footer__container">
+                    <div class="Footer__box--left">
+                      <h2 class="Footer__title Footer__title--sika">Sika Colombia S.A.S</h2>
+                      <h4 class="Footer__text">Vereda Canavita KM 20,5 - Autopista Norte</h4>
+                      <h4 class="Footer__text">Tocancipá, Cundinamarca</h4>
+                      <h4 class="Footer__text"><a href="tel:(1) 8786333">(1) 8786333</a></h4>
+                      <h4 class="Footer__text">Colombia</h4>
+                    </div>
+                    <div class="Footer__box--right">
+                      <h3 class="Footer__title Footer__title--categories">Categorías Destacadas</h3>
+                      <div class="Footer__categories">
+                        <div class="Footer__categories-box">
+                          <h4 class="Footer__text"><a href="#"> Aditivos y curadores</a></h4>
+                          <h4 class="Footer__text"><a href="#"> Adhesivos de enchape</a></h4>
+                          <h4 class="Footer__text"><a href="#"> Mampostería</a></h4>
+                          <h4 class="Footer__text"><a href="#"> Impermeabilización de muros</a></h4>
+                        </div>
+                        <div class="Footer__categories-box">
+                          <h4 class="Footer__text"><a href="#"> Morteros y grouts de Reparación</a></h4>
+                          <h4 class="Footer__text"><a href="#"> Sistemas livianos - Drywall</a></h4>
+                          <h4 class="Footer__text"><a href="#"> Epoxicos y anclajes</a></h4>
+                          <h4 class="Footer__text"><a href="#"> Estuvos y pinturas Decorativas</a></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="Footer__container Footer__container--bottom">
+                    <div class="Socials">
+                      <span class="Socials__text">Siguenos en</span>
+                      <span class="Socials__icon--facebook">
+                        <a href="https://www.facebook.com/sikacolombia" target="_blank" rel="noopener noreferrer">
+                          <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M0 11.1829C0 16.6396 3.80459 21.1771 8.78049 22.0972V14.1701H6.14634V11.1216H8.78049V8.68228C8.78049 5.93837 10.4778 4.41459 12.8783 4.41459C13.6387 4.41459 14.4588 4.53624 15.2192 4.65789V7.46307H13.8732C12.5851 7.46307 12.2927 8.1335 12.2927 8.98777V11.1216H15.1024L14.6344 14.1701H12.2927V22.0972C17.2686 21.1771 21.0732 16.6405 21.0732 11.1829C21.0732 5.11246 16.3317 0.145996 10.5366 0.145996C4.74146 0.145996 0 5.11246 0 11.1829Z"
+                              fill="white" />
+                          </svg>
+                        </a>
+                      </span>
+                      <span class="Socials__icon--instagram">
+                        <a href="https://www.instagram.com/sika_colombia/" target="_blank" rel="noopener noreferrer">
+                          <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M24.6211 10.2354C24.6093 9.34873 24.4433 8.47086 24.1305 7.64108C23.8593 6.94116 23.4451 6.3055 22.9144 5.77473C22.3836 5.24396 21.7479 4.82974 21.048 4.55854C20.2289 4.25105 19.3635 4.08479 18.4888 4.06683C17.3625 4.01649 17.0055 4.00244 14.1465 4.00244C11.2876 4.00244 10.9212 4.00244 9.80313 4.06683C8.92878 4.08492 8.06383 4.25118 7.24508 4.55854C6.54505 4.82955 5.9093 5.2437 5.3785 5.7745C4.84771 6.3053 4.43355 6.94105 4.16254 7.64108C3.85444 8.45957 3.68854 9.32472 3.67201 10.1991C3.62166 11.3265 3.60645 11.6836 3.60645 14.5425C3.60645 17.4015 3.60645 17.7667 3.67201 18.886C3.68957 19.7617 3.85464 20.6257 4.16254 21.4463C4.43401 22.1462 4.84847 22.7817 5.37944 23.3122C5.91042 23.8428 6.54623 24.2568 7.24625 24.5277C8.06276 24.8476 8.92786 25.0257 9.8043 25.0545C10.9317 25.1049 11.2888 25.1201 14.1477 25.1201C17.0066 25.1201 17.3731 25.1201 18.4911 25.0545C19.3658 25.0373 20.2313 24.8714 21.0504 24.564C21.7501 24.2925 22.3856 23.8782 22.9163 23.3474C23.447 22.8167 23.8614 22.1812 24.1329 21.4815C24.4408 20.662 24.6059 19.798 24.6234 18.9211C24.6738 17.7948 24.689 17.4378 24.689 14.5777C24.6866 11.7187 24.6866 11.3558 24.6211 10.2354ZM14.1395 19.949C11.1495 19.949 8.72723 17.5267 8.72723 14.5367C8.72723 11.5466 11.1495 9.12439 14.1395 9.12439C15.575 9.12439 16.9516 9.69461 17.9666 10.7096C18.9816 11.7246 19.5518 13.1013 19.5518 14.5367C19.5518 15.9721 18.9816 17.3488 17.9666 18.3638C16.9516 19.3788 15.575 19.949 14.1395 19.949ZM19.7672 10.1862C19.0683 10.1862 18.5052 9.62195 18.5052 8.9242C18.5052 8.75854 18.5378 8.5945 18.6012 8.44146C18.6646 8.28841 18.7575 8.14935 18.8747 8.03221C18.9918 7.91507 19.1309 7.82215 19.2839 7.75876C19.437 7.69536 19.601 7.66273 19.7666 7.66273C19.9323 7.66273 20.0963 7.69536 20.2494 7.75876C20.4024 7.82215 20.5415 7.91507 20.6586 8.03221C20.7758 8.14935 20.8687 8.28841 20.9321 8.44146C20.9955 8.5945 21.0281 8.75854 21.0281 8.9242C21.0281 9.62195 20.4638 10.1862 19.7672 10.1862Z"
+                              fill="white" />
+                            <path d="M14.1395 18.0529C16.0812 18.0529 17.6552 16.4789 17.6552 14.5372C17.6552 12.5955 16.0812 11.0215 14.1395 11.0215C12.1978 11.0215 10.6238 12.5955 10.6238 14.5372C10.6238 16.4789 12.1978 18.0529 14.1395 18.0529Z" fill="white" />
+                          </svg>
+                        </a>
+                      </span>
+                    </div>
+                    <div class="Footer__info">
+                      <p class="Footer__info-container">
+                        <a href="">Imprint</a> |
+                        <a href="">Nota Legal</a> |
+                        <a href="">Autocontrol y Gestión</a> |
+                        <a href="">Condiciones de venta</a>
+                        <br />
+                        <a href="">Condiciones de Compra</a> |
+                        <a href=""> Avisos de Privacidad</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

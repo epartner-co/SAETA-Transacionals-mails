@@ -1,5 +1,15 @@
-# Transactional mails template
+# Transactional mails templates
 _This is the template for change the transactional mails in all the stores (*Probably the Design department make some changes and it will be necessary to change the structure of these default files*)_
+
+Follow the steps for edit the mails:
+
+1. Clone or Fork the [templates mail repository]()
+2. Add or edit the style using the guide bellow ⬇
+3. Be carefully with the **Considerations**
+4. The [cart abandoned template]() use the same steps for edit, but the HTML structure is different
+
+The templates mails are based on ```global.html```
+
 
 ## Structure
 ### HTML
@@ -38,7 +48,8 @@ The Structure of the CSS file is also divided by comments and contains the next 
 
 `Each one of the sections contains styles for specific components and blocks inside the HTML.`
 
-## Steps for edit the HTML 👷‍♂️
+## Guide for edit the templates
+### Steps for edit the HTML 👷‍♂️
 1. Add the new fonts using the ```<link>``` tag.
 2. Inside the _'Style Sheet' Comment_ add the ```<style>``` tag and put the CSS inside them.
 3. Go inside the _Header section_ and change the image tag source for the Company logo. ```<img src="{new-source}">```
@@ -49,10 +60,16 @@ The Structure of the CSS file is also divided by comments and contains the next 
 8. Go inside the _Icons data section_ and change each one of the icons and his informational text depends on the design.
 9. The _Footer section_ always change depends on the design, so this block it is important to customize (don't forget to use [BEM](http://getbem.com/) for that) as we need in our design.
 
-## Steps for edit the CSS 💅
+### Steps for edit the CSS 💅
 1. On the ```:root``` rule, it is important to change the colors palette for each one of the developments (we use the SIKA color palette for this development) and also change the font family values.
 2. Navigate between all the rules divided by comments and change the ```font-size``` declarations for those one in the design.
 3. Fil free to change the rules declarations. (this one is an default and personalize standard).
+
+### Edit the HTML mail in VTEX ✨
+Google and other Mails providers block some styles of the tag Style, so once we have our style in each one of the templates, it is necessary to convert the style into inline html styles. Personally we use [mailchimp](https://templates.mailchimp.com/resources/inline-css/) for convert the HTML and CSS into inline html styles.
+
+After you make this inline styles it is necessary to change the VAR styles values in your inline styles. It is necessary to put the colors and styles without using the VAR in each one of the inline styles.
+
 
 ## Considerations 🚧
 * Don't delete the ```<table>``` tag childs as ```<td>``` or ```<tr>``` tags. Because probably you will be broke the VTEX default functionality.
@@ -63,5 +80,7 @@ The Structure of the CSS file is also divided by comments and contains the next 
 * If you are going to change the colors, select all the css declarations that use this color and change the name of the color respectively, use the colors name for more legibility. Then change the color variable value.
 * The *Style.css* file contains the backup styles that come by default.
 
+
+_[The original templates]()_
 
 _Code with ♥_
