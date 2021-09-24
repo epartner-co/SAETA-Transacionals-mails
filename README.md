@@ -3,7 +3,7 @@ _This is the template for change the transactional mails in all the stores (*Pro
 
 Follow the steps for edit the mails:
 
-1. Clone or Fork the [templates mail repository]()
+1. Clone or Fork the [templates mail repository](https://github.com/epartner-co/transactional-mails)
 2. Add or edit the style using the guide bellow ⬇
 3. Be carefully with the **Considerations**
 4. The [cart abandoned template]() use the same steps for edit, but the HTML structure is different
@@ -81,6 +81,6 @@ After you make this inline styles it is necessary to change the VAR styles value
 * The *Style.css* file contains the backup styles that come by default.
 
 
-_[The original templates]()_
+_[The original templates](https://github.com/epartner-co/transactional-mails)_
 
 _Code with ♥_
