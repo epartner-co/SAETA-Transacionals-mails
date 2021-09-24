@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" style="background-color: #f1f1f1;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{_accountInfo.TradingName}}</title>
+
+  <!-- * Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- */ Fonts -->
+</head>
+
+<body style="font-family: 'Jost', sans-serif;box-sizing: border-box;">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <table class="Table" align="center" border="0" cellpadding="0" cellspacing="0" style="max-width: 748px;">
+          <tbody>
+
+            <!-- * Header-->
+            <tr class="Header" style="background-color: #000131;">
+              <td align="center">
+                <div class="Header__container Header__container--top" style="display: flex;align-items: center;justify-content: center;padding-top: 1rem;">
+                  <a href="http://www.saetasport.com" class="Header__logo-container" style="width: 40%;">
+                    <img src="https://saetasport.vteximg.com.br/arquivos/mail-saeta-logo.png" alt="Logo">
+
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- * Banner -->
+            <tr class="Banner Table__row" style="background-color: #FBFBFB;">
+              <td>
+                <div class="Banner__container">
+                  <img src="https://saetasport.vteximg.com.br/arquivos/mail-banner.jpg" alt="Banner image" class="Banner__image" style="width: 100%;">
+                </div>
+              </td>
+            </tr>
+
+            <!-- * Top text -->
+            <tr class="Table__row" style="background-color: #FBFBFB;">
+              <td>
+                <h1 class="Text Text--user" style="margin: 0;font-size: 40px;line-height: 40px;text-align: center;color: #FBCE2F;text-transform: uppercase;padding: 3rem 0 0;font-weight: 700;">Hola, {{orders.0.clientProfileData.firstName}}</h1>
+                <h1 class="Text Text--subtitle" style="margin: 0;font-size: 15px;line-height: 40px;text-align: center;color: #0616C4;text-transform: uppercase;font-weight: 500;">¡Tu pago se encuentra pendiente!</h1>
+                <hr class="horizontal-line horizontal-line--top" style="width: 15%;border-color: #EDEDED;margin-top: 2rem;margin-bottom: 1rem;">
+                <p class="Text Text--description" style="margin: 0;font-size: 14px;line-height: 25px;text-align: center;color: #000000;text-transform: initial;margin-right: 2rem;margin-left: 2rem;">
+                  El pago de tu pedido continúa pendiente, por favor realiza el pago para continuar con la compra.
+                </p>
+                <hr class="horizontal-line horizontal-line--bottom" style="width: 15%;border-color: #EDEDED;margin-top: 1rem;margin-bottom: 2rem;">
+              </td>
+            </tr>
+
+            <!-- * Images breadcrumb -->
+            <tr class="Table__row" style="background-color: #FBFBFB;">
+              <td>
+                <div class="Breadcrumb__container" style="display: flex;align-items: center;justify-content: space-evenly;padding: 2rem;">
+                  <div class="Breadcrumb__item" style="z-index: 2;">
+                    <img src="https://saetasport.vteximg.com.br/arquivos/mail-orden-recibida-verde-icono.png" alt="Orden recibida logo" style="width: 115px;">
+                    <p class="Breadcrumb__text Breadcrumb__text--good" style="color: #5cca07;">Orden recibida</p>
+                  </div>
+                  <div class="Breadcrumb__item" style="z-index: 2;">
+                    <img src="https://saetasport.vteximg.com.br/arquivos/mail-pago-aprobado-naranja-icono.png" alt="Pago aprobado logo" style="width: 115px;">
+                    <p class="Breadcrumb__text Breadcrumb__text--pending" style="color: #000131;">Pago pendiente</p>
+                  </div>
+                  <div class="Breadcrumb__item" style="z-index: 2;">
+                    <img src="https://saetasport.vteximg.com.br/arquivos/mail-enviado-icono.png" alt="Pedido enviado logo" style="width: 115px;">
+                    <p class="Breadcrumb__text" style="color: #000131;">Pedido enviado</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- * Order number info -->
+            {{#each orders}}
+            <tr class="Table__row" style="background-color: #FBFBFB;">
+              <td class="Order-number" style="padding: 2rem;">
+                <h2 class="Order-number__text" style="margin: 0;font-size: 18px;text-align: center;color: #000131;">
+                  Número de pedido: <span style="font-weight: 300;">{{orderId}}</span>
+                </h2>
+              </td>
+            </tr>
+            {{/each}}
+
+            <!-- * Boxes whites -->
+            <tr class="Table__row" style="background-color: #FBFBFB;">
+              <td>
+                <table style="width: 100%;">
+                  <tbody class="Boxes" style="display: flex;justify-content: center;align-items: center;">
+
+                    {{#each orders}}
+                    <!-- * Box Address -->
+                    <tr class="Boxes__container Boxes__container--left" style="display: flex;justify-content: center;margin: 1rem;width: 50%;height: 12rem;max-height: 12rem;font-size: 14px;border-radius: 20px;background-color: #fff;margin-right: 0.5rem;">
+                      <td>
+                        {{#richShippingData shippingData}}
+                        {{#group logisticsInfo by="addessId"}}
+
+                        <div>
+                          {{#compare items.0.selectedDeliveryChannel '==' null}}
+                          <div class="Address__container" style="margin: 0 2rem 1rem 2rem;text-align: center;">
+                            <h4 class="Boxes__title Boxes__title--text" style="margin: 1.6rem 2rem 1.3rem 2rem;padding-bottom: 0.5rem;font-weight: 700;font-size: 18px;color: #000131;text-transform: uppercase;border-bottom: 0.1rem solid #EDEDED;">Productos a Recibir</h4>
+                            {{#if orders.0.giftRegistryData}}
+                            {{orders.0.giftRegistryData.description}}
+                            {{else}}
+                            {{#each ../../shippingData.availableAddresses}}
+                            {{#eq ../addressId AddressId}}
+                            <strong>{{receiverName}}</strong>
+                            <br>{{street}}, {{number}}{{#if complement}} - {{complement}}{{/if}}
+                            <br>{{neighborhood}} - {{city}} - {{state}}
+                            <br>CEP {{postalCode}}
+                            {{/eq}}
+                            {{/each}}
+                            {{/if}}
+                          </div>
+                          {{/compare}}
+                          {{#eq items.0.selectedDeliveryChannel "delivery"}}
+                          <div class="Address__container" style="margin: 0 2rem 1rem 2rem;text-align: center;">
+                            {{#if orders.0.giftRegistryData}}
+                            {{orders.0.giftRegistryData.description}}
+                            {{else}}
+                            {{#each ../../shippingData.availableAddresses}}
+                            {{#eq ../addressId AddressId}}
+                            <div>
+                              <h3 class="Boxes__title Boxes__title--text" style="margin: 1.6rem 2rem 1.3rem 2rem;padding-bottom: 0.5rem;font-weight: 700;font-size: 18px;color: #000131;text-transform: uppercase;border-bottom: 0.1rem solid #EDEDED;">Dirección de entrega</h3>
+                              <strong>{{receiverName}}</strong>
+                              <br>{{street}}, {{number}}{{#if complement}} - {{complement}}{{/if}}
+                              <br>{{neighborhood}} - {{city}} - {{state}}
+                              <br>CEP {{postalCode}}
+                              {{/eq}}
+                              {{/each}}
+                              {{/if}}
+                            </div>
+                          </div>
+                          {{/eq}}
+                          {{/group}}
+                          {{/richShippingData}}
+                        </div>
+                      </td>
+                    </tr>
+                    {{/each}}
+
+                    <!-- * Box Payment -->
+                    {{#compare split "!=" true}}
+                    <tr class="Boxes__container Boxes__container--right" style="display: flex;justify-content: center;margin: 1rem;width: 50%;height: 12rem;max-height: 12rem;font-size: 14px;border-radius: 20px;background-color: #fff;margin-left: 0.5rem;">
+                      <td>
+                        <div class="Payment__container" style="padding: 1rem;padding-top: 0;text-align: center;">
+                          <h3 class="Boxes__title Boxes__title--text" style="margin: 1.6rem 2rem 1.3rem 2rem;padding-bottom: 0.5rem;font-weight: 700;font-size: 18px;color: #000131;text-transform: uppercase;border-bottom: 0.1rem solid #EDEDED;">Medio de pago</h3>
+                          {{#each orders.0.paymentData.transactions}}
+                          {{#compare payments.length "==" 1}}
+                          {{#each payments}}
+                          <div class="Payment__data" style="margin: 0 2rem;line-height: 1.5;font-size: 14px;">
+                            {{paymentSystemName}}
+                            {{#if lastDigits}} final {{lastDigits}} {{/if}}
+                            <br>$ {{formatCurrency value}}
+                            {{#eq installments 1}}
+                            Total
+                            {{else}}
+                            en {{installments}}x
+                            {{/eq}}
+                          </div>
+                          {{/each}}
+                          {{/compare}}
+                        </div>
+                        {{#compare payments.length "!=" 1}}
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                          {{#each payments}}
+                          <tr>
+                            <td class="Payment__extra-data" style="padding-bottom: 0.25rem;font-size: 1rem;line-height: 20px;border-bottom: 0.1rem solid black;">
+                              {{paymentSystemName}}
+                              {{#if lastDigits}} final {{lastDigits}} {{/if}}
+                              {{#eq installments 1}}
+                              Total
+                              {{else}}
+                              en {{installments}}x
+                              {{/eq}}
+                            </td>
+                            <td class="Payment__extra-data Payment__extra-data--bottom" align="left" style="padding-bottom: 0.25rem;font-size: 1rem;line-height: 20px;border-bottom: 0.1rem solid black;padding-top: 0.25rem;">$ {{formatCurrency value}}</td>
+                          </tr>
+                          {{/each}}
+                        </table>
+                        {{/compare}}
+                        {{/each}}
+                      </td>
+                    </tr>
+                    {{/compare}}
+
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+
+            <!-- * Products description -->
+            <tr class="Table__row" style="background-color: #FBFBFB;">
+              <td class="Products-list" style="padding: 20px;padding-bottom: 2rem;line-height: 20px;font-size: 14px;">
+                {{#each orders}}
+                {{#richShippingData shippingData}}
+                {{#group logisticsInfo by="packageId"}}
+                {{#each items}}
+                {{#compare @index '==' 0}}
+                <div class="Products-list__container" style="padding: 1rem;border-radius: 20px;background: #fff;">
+                  <div>
+                    <div>
+                      {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                      {{else}}
+                      <div class="Boxes__title-container Boxes__title--text" style="display: flex;align-items: center;justify-content: center;color: #000131;text-transform: uppercase;font-weight: 700;border-bottom: 0.1rem solid #EDEDED;">
+                        <h4 class="Boxes__title Boxes__title--left" style="margin: 1.6rem 2rem 1.3rem 2rem;padding-bottom: 0.5rem;font-weight: 700;font-size: 18px;color: #000131;width: 50%;margin-bottom: 0;">Producto</h4>
+                        <h4 class="Boxes__title Boxes__title--right" style="margin: 1.6rem 2rem 1.3rem 2rem;padding-bottom: 0.5rem;font-weight: 700;font-size: 18px;color: #000131;margin-bottom: 0;margin-right: 0;width: 30%;text-align: center;">Cantidad | precio</h4>
+                      </div>
+                      {{/eq}}
+                      <div class="Products-list__box" style="padding: 1rem;">
+                        {{#eq ../items.length 1}}
+                        {{#each ../../../items}}
+                        {{#compare id '==' ../../items.0.itemId}}
+                        <div class="Product" style="display: flex;align-items: center;justify-content: center;padding-bottom: 2rem;font-weight: 700;font-size: 12px;border-bottom: 0;">
+                          <div class="Product__image-container" style="padding-right: 1rem;width: 20%;">
+                            <img src="{{imageUrl}}" alt="Product Image" style="width: 100%;">
+                          </div>
+                          <div class="Product__text" style="padding: 1.3rem;width: 55%;font-weight: 300;text-transform: uppercase;">{{name}}</div>
+                          <div class="Product__description" style="display: flex;align-items: center;justify-content: center;width: 25%;">
+                            {{quantity}}<p style="width:20px"></p>
+                            {{#if price}}
+                            $ {{formatCurrency price}}
+                            {{else}}
+                            Gratis
+                            {{/if}}
+                          </div>
+                        </div>
+                        {{/compare}}
+                        {{/each}}
+                        {{else}}
+                        {{../items.length}}
+                        items
+                        {{/eq}}
+                        <!-- {{#if deliveryWindow}} -->
+                        en
+                      </div>
+                      <!-- <div style="padding:10px;box-sizing: border-box; margin-bottom: .25rem; margin-top: .5rem; font-size: 1.5rem !important;">
+                      {{formatDate deliveryWindow.startDateUtc}}
+                    </div>
+                    <div style="padding:10px;box-sizing: border-box; padding-bottom: 1rem !important;">
+                      entre
+                      {{formatTime deliveryWindow.startDateUtc}}
+                      e
+                      {{formatTime deliveryWindow.endDateUtc}}
+                    </div>
+                    <div style="padding:10px">
+                      {{else}}
+                      {{#if shippingEstimateDate}}
+                      {{#eq deliveryChannel "pickup-in-point"}}
+                      a partir de
+                      {{else}}
+                      Hasta
+                      {{/eq}}
+                      {{formatDate shippingEstimateDate}}
+                      {{else}}
+                      {{#eq shippingEstimateDays "0"}}</div>
+                    <div style="padding:10px;box-sizing: border-box; padding-bottom: 1rem; margin-top: .5rem; font-size: 1.5rem !important;">
+                      {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                      a partir de hoy
+                      {{else}}
+                      hoy
+                      {{/eq}}
+                    </div>
+                    {{else}}
+                    {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                    a partir de
+                    {{else}}
+                    hasta
+                    {{/eq}}
+                    <div style="box-sizing: border-box; padding-bottom: 1rem; margin-top: .5rem; font-size: 1.5rem !important;">
+                      {{#compare shippingEstimateDays ">" "1"}}
+                      {{#eq shippingEstimateDaysType "bd"}}
+                      {{shippingEstimateDays}} días Hábiles
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "d"}}
+                      {{shippingEstimateDays}} días
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "h"}}
+                      {{shippingEstimateDays}} horas
+                      {{else}}
+                      {{shippingEstimateDays}} minutos
+                      {{/eq}}
+                      {{/eq}}
+                      {{/eq}}
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "bd"}}
+                      {{shippingEstimateDays}} día habil
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "d"}}
+                      {{shippingEstimateDays}} día
+                      {{else}}
+                      {{#eq shippingEstimateDaysType "h"}}
+                      {{shippingEstimateDays}} hora
+                      {{else}}
+                      {{shippingEstimateDays}} minuto
+                      {{/eq}}
+                      {{/eq}}
+                      {{/eq}}
+                      {{/compare}}
+                    </div> -->
+                      {{/eq}}
+                      {{/if}}
+                      {{/if}}
+                    </div>
+
+                    <!-- <div style="box-sizing: border-box; padding-top: .5rem; padding-bottom: .5rem; padding-left: 1rem; padding-right: 1rem !important;">
+                    {{#eq selectedDeliveryChannel "pickup-in-point"}}
+                    {{#each slas}}
+                    {{#compare ../selectedSla '==' id}}
+                    {{pickupStoreInfo.friendlyName}}
+                    {{/compare}}
+                    {{/each}}
+                    {{else}}
+                    {{#if ../../../giftRegistryData}}
+                    {{../../../giftRegistryData.description}}
+                    {{else}}
+                    {{#each ../../availableAddresses}}
+                    {{#eq ../addressId addressId}}
+                    {{street}}, {{number}}
+                    {{/eq}}
+                    {{/each}}
+                    {{/if}}
+                    {{/eq}}
+                  </div> -->
+                  </div>
+                </div>
+                {{/compare}}
+                {{/each}}
+                {{/group}}
+                {{/richShippingData}}
+                {{/each}}
+              </td>
+            </tr>
+
+            <!-- * Payment values  -->
+            {{#each orders}}
+            <tr class="Table__row" style="background-color: #FBFBFB;">
+              <td class="Payment" align="left" style="padding: 2rem;width: 100%;text-align: left;font-size: 14px;">
+                <div class="Payment-info__container" style="display: flex;flex-direction: row;justify-content: space-between;padding-bottom: 3rem;padding-left: 20rem;">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="Payment-info__values" style="margin: 0 2rem 0 0;padding: 10px 0;border-top: 0.1rem solid #EDEDED;border-bottom: 0.1rem solid #EDEDED;">
+                    <tbody style="vertical-align: middle;">
+                      {{#each totals}}
+                      {{#if value}}
+                      <tr class="Value" style="height: 1rem;">
+                        <td class="Value__data" align="left" style="color: #000131;font-weight: bold;text-transform: uppercase;">
+                          {{#eq id "Items"}}Subtotal{{/eq}}
+                          {{#eq id "Discounts"}}Descuentos{{/eq}}
+                          {{#eq id "Shipping"}}Valor flete{{/eq}}
+                          {{#eq id "Tax"}}IVA{{/eq}}
+                        </td>
+                        <td class="Value__price" align="right" style="line-height: 20px;text-align: right;font-size: 14px;color: #565656;text-transform: uppercase;">$ {{formatCurrency value}}</td>
+                      </tr>
+                      {{/if}}
+                      {{/each}}
+                      {{#if value}}
+                      <tr class="Value" style="height: 1rem;">
+                        <td class="Value__data" align="left" style="color: #000131;font-weight: bold;text-transform: uppercase;">Total</td>
+                        <td class="Value__price Value__price--total" align="right" style="line-height: 20px;text-align: right;font-size: 14px;color: #000131;text-transform: uppercase;font-weight: bold;">$ {{formatCurrency value}}</td>
+                      </tr>
+                      {{/if}}
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            {{/each}}
+
+            <!-- * Icons Data -->
+            <tr>
+              <td>
+                <div class=" Icons Icons__container" style="display: flex;justify-content: center;align-items: center;padding: 2rem;background: #fff;">
+                  <div class="Icons__item" style="padding: 0 1rem;height: 13rem;text-align: center;">
+                    <div class="Icon__image">
+                      <svg width="142" height="142" viewbox="0 0 142 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="71" cy="71" r="71" fill="#FBFBFB"></circle>
+                        <g clip-path="url(#clip0)">
+                          <path
+                            d="M108 76.9977L102.12 65.4495C101.84 64.8992 101.275 64.5527 100.657 64.5527H70.9999H41.342C40.7245 64.5527 40.1593 64.8992 39.8791 65.4495L33.9996 76.9977C33.7406 77.5067 33.7646 78.1135 34.063 78.6004C34.3614 79.0872 34.8914 79.3838 35.4623 79.3838H37.5112V108.358C37.5112 109.264 38.246 110 39.1526 110H102.842C103.748 110 104.483 109.264 104.483 108.358V79.384H106.537C107.108 79.384 107.638 79.0872 107.936 78.6005C108.235 78.1135 108.259 77.5067 108 76.9977ZM99.6512 67.8356L103.859 76.1009H77.8856L73.6774 67.8356H99.6512ZM42.3483 67.8356H68.3222L64.114 76.1009H38.1402L42.3483 67.8356ZM101.201 106.717H72.6413V97.6193C72.6413 96.7129 71.9064 95.9778 70.9999 95.9778C70.0933 95.9778 69.3584 96.7129 69.3584 97.6193V106.717H40.7944V79.384H65.1204C65.7379 79.384 66.303 79.0376 66.5832 78.4873L69.3584 73.0362V82.8793C69.3584 83.7857 70.0933 84.5207 70.9999 84.5207C71.9064 84.5207 72.6413 83.7857 72.6413 82.8793V73.0362L75.4165 78.4873C75.6967 79.0376 76.2618 79.384 76.8793 79.384H101.201V106.717Z"
+                            fill="#000131"></path>
+                          <path d="M56.9636 97.7275H47.6169C46.7103 97.7275 45.9754 98.4626 45.9754 99.369C45.9754 100.275 46.7103 101.01 47.6169 101.01H56.9636C57.8702 101.01 58.605 100.275 58.605 99.369C58.605 98.4626 57.8702 97.7275 56.9636 97.7275Z" fill="#000131"></path>
+                          <path
+                            d="M70.9999 59.7264C80.2878 59.7264 87.8444 52.1605 87.8444 42.8609C87.8442 33.5638 80.2878 26 70.9999 26C61.7093 26 54.1508 33.5638 54.1508 42.8609C54.1508 52.1605 61.7091 59.7264 70.9999 59.7264ZM70.9999 29.2829C78.4778 29.2829 84.5615 35.374 84.5615 42.8609C84.5615 50.3505 78.4778 56.4435 70.9999 56.4435C63.5195 56.4435 57.4337 50.3505 57.4337 42.8609C57.4337 35.374 63.5193 29.2829 70.9999 29.2829Z"
+                            fill="#000131"></path>
+                          <path
+                            d="M63.6406 45.3224L68.0096 49.0258C68.3072 49.2781 68.6837 49.4152 69.071 49.4152C69.1176 49.4152 69.1644 49.4132 69.2111 49.4093C69.6468 49.3718 70.0494 49.1624 70.33 48.827L78.5519 39.0004C79.1337 38.3052 79.0416 37.27 78.3464 36.6881C77.6511 36.1067 76.616 36.1984 76.0343 36.8938L68.8724 45.4534L65.7636 42.818C65.0721 42.2319 64.0362 42.3169 63.4502 43.0088C62.8637 43.7005 62.949 44.7361 63.6406 45.3224Z"
+                            fill="#000131"></path>
+                          <path d="M38.7534 44.5026H45.8552C46.7618 44.5026 47.4967 43.7676 47.4967 42.8612C47.4967 41.9548 46.7618 41.2197 45.8552 41.2197H38.7534C37.8468 41.2197 37.1119 41.9548 37.1119 42.8612C37.1119 43.7676 37.8468 44.5026 38.7534 44.5026Z" fill="#000131"></path>
+                          <path
+                            d="M37.9878 33.0809L45.0896 36.8265C45.3339 36.9554 45.5957 37.0164 45.8541 37.0164C46.4433 37.0164 47.0132 36.6982 47.3074 36.1404C47.7302 35.3385 47.4231 34.3456 46.6213 33.9228L39.5192 30.1772C38.7177 29.7544 37.7245 30.0613 37.3016 30.8633C36.8788 31.6652 37.1859 32.6581 37.9878 33.0809Z"
+                            fill="#000131"></path>
+                          <path
+                            d="M37.3009 54.8575C37.5949 55.4156 38.1648 55.7343 38.7545 55.7343C39.0124 55.7343 39.2742 55.6734 39.5181 55.5449L46.62 51.8041C47.422 51.3816 47.7298 50.3888 47.3073 49.5868C46.8848 48.7846 45.892 48.477 45.09 48.8994L37.9882 52.6402C37.1861 53.0627 36.8785 54.0555 37.3009 54.8575Z"
+                            fill="#000131"></path>
+                          <path d="M96.14 44.5026H103.242C104.148 44.5026 104.883 43.7676 104.883 42.8612C104.883 41.9548 104.148 41.2197 103.242 41.2197H96.14C95.2334 41.2197 94.4986 41.9548 94.4986 42.8612C94.4986 43.7676 95.2334 44.5026 96.14 44.5026Z" fill="#000131"></path>
+                          <path
+                            d="M96.1415 37.0165C96.3997 37.0165 96.6616 36.9555 96.9059 36.8266L104.008 33.081C104.81 32.6582 105.117 31.6653 104.694 30.8634C104.271 30.0616 103.278 29.7541 102.476 30.1773L95.3744 33.9229C94.5726 34.3458 94.2655 35.3387 94.6883 36.1405C94.9824 36.6983 95.552 37.0165 96.1415 37.0165Z"
+                            fill="#000131"></path>
+                          <path
+                            d="M95.3749 51.8042L102.477 55.545C102.721 55.6735 102.982 55.7344 103.24 55.7344C103.83 55.7344 104.4 55.4158 104.694 54.8576C105.117 54.0556 104.809 53.0628 104.007 52.6403L96.9049 48.8995C96.1027 48.477 95.1101 48.7846 94.6876 49.5869C94.2651 50.3889 94.5729 51.3817 95.3749 51.8042Z"
+                            fill="#000131"></path>
+                          <path d="M71 88.6084C70.0935 88.6084 69.3586 89.3434 69.3586 90.2498V90.2592C69.3586 91.1656 70.0935 91.896 71 91.896C71.9066 91.896 72.6415 91.1564 72.6415 90.25C72.6415 89.3436 71.9066 88.6084 71 88.6084Z" fill="#000131"></path>
+                        </g>
+                        <defs>
+                          <clippath id="clip0">
+                            <rect width="84" height="84" fill="white" transform="translate(29 26)"></rect>
+                          </clippath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <h4 class="Icon__title" style="margin-bottom: 0;text-transform: uppercase;color: #000131;font-weight: 300;font-size: 15px;">Envíos a todo <br> el mundo</h4>
+                  </div>
+                  <div class="Icons__item" style="padding: 0 1rem;height: 13rem;text-align: center;">
+                    <div class="Icon__image">
+                      <svg width="142" height="142" viewbox="0 0 142 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="71" cy="71" r="71" fill="#FBFBFB"></circle>
+                        <path d="M64.4375 48H67.0625V50.625H64.4375V48Z" fill="#000131"></path>
+                        <path d="M74.9375 48H77.5625V50.625H74.9375V48Z" fill="#000131"></path>
+                        <path d="M71 59.8125C73.208 59.8125 74.9375 58.3712 74.9375 56.5312H72.3125C72.3125 56.7626 71.8142 57.1875 71 57.1875C70.1858 57.1875 69.6875 56.7626 69.6875 56.5312H67.0625C67.0625 58.3712 68.7921 59.8125 71 59.8125Z" fill="#000131"></path>
+                        <path
+                          d="M104.482 86.1888L99.4904 81.1969L97.6342 83.0531L102.626 88.0449C103.421 88.8353 104.051 89.7754 104.48 90.8109C104.909 91.8464 105.128 92.9566 105.125 94.0774V102.141C105.124 103.098 104.743 104.015 104.066 104.692C103.39 105.368 102.472 105.749 101.515 105.75H98.5623V99.1875H101.187V96.5625H95.9373V72.9375C95.9373 72.5894 95.799 72.2556 95.5529 72.0094C95.3067 71.7633 94.9729 71.625 94.6248 71.625H87.5071L80.0211 66.8611L78.9347 62.5156L79.394 62.2828C80.4244 61.7649 81.29 60.9702 81.8938 59.9878C82.4976 59.0053 82.8157 57.8741 82.8123 56.7209V55.875H83.4685C84.6865 55.8736 85.8541 55.3892 86.7153 54.528C87.5765 53.6668 88.0609 52.4992 88.0623 51.2812V49.9688C88.0609 48.768 87.59 47.6155 86.7501 46.7573C85.9103 45.8992 84.7682 45.4035 83.5678 45.3761C83.9338 44.7026 84.1253 43.9481 84.1248 43.1815V39.1406C84.1219 36.6178 83.1185 34.1991 81.3346 32.4152C79.5507 30.6313 77.132 29.6279 74.6092 29.625H67.3904C64.8676 29.6279 62.4489 30.6313 60.665 32.4152C58.8811 34.1991 57.8777 36.6178 57.8748 39.1406V43.1815C57.8745 43.9481 58.0663 44.7027 58.4326 45.3761C57.2321 45.4033 56.0897 45.8989 55.2497 46.757C54.4097 47.6152 53.9387 48.7679 53.9373 49.9688V51.2812C53.9387 52.4992 54.4231 53.6668 55.2843 54.528C56.1455 55.3892 57.3131 55.8736 58.531 55.875H59.1873V56.7706C59.1834 57.9292 59.5041 59.0658 60.1133 60.0514C60.7224 61.037 61.5955 61.8322 62.6336 62.3468L63.0546 62.5573L61.9785 66.8611L54.4925 71.625H47.3748C47.0267 71.625 46.6929 71.7633 46.4467 72.0094C46.2006 72.2556 46.0623 72.5894 46.0623 72.9375V77.6438L41.1967 82.5094L43.0529 84.3656L46.0623 81.3562V96.5625H40.8123V99.1875H43.4373V105.75H40.4842C39.5272 105.749 38.6098 105.368 37.9332 104.692C37.2565 104.015 36.8759 103.098 36.8748 102.141V94.0774C36.8717 92.9567 37.091 91.8464 37.5199 90.8109C37.9487 89.7754 38.5787 88.8353 39.3733 88.0449L40.4277 86.9906L38.5719 85.1344L37.5173 86.1888C36.4781 87.2224 35.6542 88.4518 35.0933 89.8058C34.5325 91.1599 34.2458 92.6118 34.2498 94.0774V102.141C34.2517 103.794 34.9091 105.378 36.0779 106.547C37.2466 107.716 38.8313 108.373 40.4842 108.375H101.515C103.168 108.373 104.753 107.716 105.922 106.547C107.09 105.378 107.748 103.794 107.75 102.141V94.0774C107.754 92.6118 107.467 91.1599 106.906 89.8058C106.345 88.4518 105.522 87.2224 104.482 86.1888ZM67.0623 74.25H74.9373V83.4375H67.0623V74.25ZM76.7935 71.625L79.0584 69.3609L82.6175 71.625H76.7935ZM61.5396 44.9173C61.2234 44.7516 60.959 44.5019 60.7755 44.1956C60.5921 43.8894 60.4967 43.5385 60.4998 43.1815V42.2097L65.263 39.5634C67.0158 38.5821 68.991 38.0669 70.9998 38.0669C73.0086 38.0669 74.9838 38.5821 76.7366 39.5634L81.4998 42.2097V43.1815C81.4998 43.5378 81.403 43.8874 81.2199 44.1931C81.0368 44.4988 80.7741 44.749 80.46 44.9172C80.1458 45.0853 79.7919 45.165 79.436 45.1478C79.0801 45.1306 78.7355 45.0171 78.439 44.8195L75.3681 42.7723C74.0755 41.9072 72.5552 41.4454 70.9998 41.4454C69.4444 41.4454 67.9241 41.9072 66.6315 42.7723L63.5605 44.8195C63.2653 45.0201 62.9204 45.1354 62.5638 45.1526C62.2073 45.1699 61.8529 45.0884 61.5396 44.9173ZM85.4373 49.9688V51.2812C85.4367 51.8032 85.2291 52.3037 84.86 52.6727C84.4909 53.0418 83.9905 53.2494 83.4685 53.25H82.8123V48H83.4685C83.9905 48.0006 84.4909 48.2082 84.86 48.5773C85.2291 48.9463 85.4367 49.4468 85.4373 49.9688ZM67.3904 32.25H74.6092C76.436 32.252 78.1875 32.9787 79.4793 34.2705C80.7711 35.5623 81.4977 37.3137 81.4998 39.1406V39.2063L78.0112 37.2688C75.8689 36.0695 73.4549 35.4397 70.9998 35.4397C68.5447 35.4397 66.1306 36.0695 63.9884 37.2688L60.4998 39.2063V39.1406C60.5018 37.3137 61.2285 35.5623 62.5203 34.2705C63.8121 32.9787 65.5635 32.252 67.3904 32.25ZM58.531 53.25C58.0091 53.2494 57.5086 53.0418 57.1395 52.6727C56.7705 52.3037 56.5629 51.8032 56.5623 51.2812V49.9688C56.5629 49.4468 56.7705 48.9463 57.1395 48.5773C57.5086 48.2082 58.0091 48.0006 58.531 48H59.1873V53.25H58.531ZM61.8123 56.7706V47.729C62.9333 47.8915 64.0748 47.6331 65.0166 47.0036L68.0875 44.9563C68.9493 44.3797 69.9628 44.0719 70.9996 44.0719C72.0365 44.0719 73.05 44.3797 73.9117 44.9563L76.9827 47.0036C77.9246 47.6329 79.0662 47.8912 80.1873 47.7288V56.7209C80.1893 57.3885 80.0051 58.0435 79.6556 58.6123C79.306 59.181 78.8049 59.6412 78.2084 59.941L71.88 63.1456C71.6056 63.2838 71.3028 63.3562 70.9956 63.357C70.6884 63.3578 70.3852 63.287 70.1101 63.1502L63.8076 59.999C63.2066 59.7011 62.7011 59.2407 62.3484 58.6701C61.9958 58.0994 61.81 57.4414 61.8123 56.7706ZM68.9361 65.4987C69.5779 65.818 70.2853 65.9832 71.0022 65.9814C71.719 65.9796 72.4256 65.8107 73.0658 65.4882L76.533 63.7328L77.4214 67.2859L73.0811 71.625H68.9185L64.5782 67.2849L65.4596 63.7598L68.9361 65.4987ZM62.9412 69.3608L65.2061 71.625H59.3819L62.9412 69.3608ZM48.6873 74.25H64.4373V84.75C64.4373 85.0981 64.5756 85.4319 64.8217 85.6781C65.0679 85.9242 65.4017 86.0625 65.7498 86.0625H76.2498C76.5979 86.0625 76.9317 85.9242 77.1779 85.6781C77.424 85.4319 77.5623 85.0981 77.5623 84.75V74.25H93.3123V96.5625H91.9998C89.4433 96.5659 86.9755 97.5005 85.0581 99.1915C83.1407 100.882 81.9049 103.214 81.5818 105.75H77.5623V99.1875C77.5623 98.8394 77.424 98.5056 77.1779 98.2594C76.9317 98.0133 76.5979 97.875 76.2498 97.875H65.7498C65.4017 97.875 65.0679 98.0133 64.8217 98.2594C64.5756 98.5056 64.4373 98.8394 64.4373 99.1875V105.75H60.4178C60.0947 103.214 58.8589 100.882 56.9415 99.1915C55.0241 97.5005 52.5563 96.5659 49.9998 96.5625H48.6873V74.25ZM46.0623 105.75V99.1875H49.9998C51.8602 99.1899 53.66 99.8498 55.081 101.051C56.502 102.252 57.4528 103.916 57.7654 105.75H46.0623ZM67.0623 105.75V100.5H74.9373V105.75H67.0623ZM95.9373 105.75H84.2342C84.5468 103.916 85.4976 102.252 86.9186 101.051C88.3396 99.8498 90.1393 99.1899 91.9998 99.1875H95.9373V105.75Z"
+                          fill="#000131"></path>
+                        <path d="M51.3125 76.875H53.9375V79.5H51.3125V76.875Z" fill="#000131"></path>
+                        <path d="M56.5625 76.875H61.8125V79.5H56.5625V76.875Z" fill="#000131"></path>
+                        <path d="M51.3125 82.125H61.8125V84.75H51.3125V82.125Z" fill="#000131"></path>
+                        <path
+                          d="M81.5 86.0625H86.0937C87.3117 86.0611 88.4793 85.5767 89.3405 84.7155C90.2017 83.8543 90.6861 82.6867 90.6875 81.4688V78.1875C90.6875 77.8394 90.5492 77.5056 90.3031 77.2594C90.0569 77.0133 89.7231 76.875 89.375 76.875H84.7812C83.5633 76.8764 82.3957 77.3608 81.5345 78.222C80.6733 79.0832 80.1889 80.2508 80.1875 81.4688V84.75C80.1875 85.0981 80.3258 85.4319 80.5719 85.6781C80.8181 85.9242 81.1519 86.0625 81.5 86.0625ZM82.8125 81.4688C82.8131 80.9468 83.0207 80.4463 83.3898 80.0773C83.7588 79.7082 84.2593 79.5006 84.7812 79.5H88.0625V81.4688C88.0619 81.9907 87.8543 82.4912 87.4852 82.8602C87.1161 83.2293 86.6157 83.4369 86.0937 83.4375H82.8125V81.4688Z"
+                          fill="#000131"></path>
+                      </svg>
+                    </div>
+                    <h4 class="Icon__title" style="margin-bottom: 0;text-transform: uppercase;color: #000131;font-weight: 300;font-size: 15px;">Compra <br> garantizada</h4>
+                  </div>
+                  <div class="Icons__item" style="padding: 0 1rem;height: 13rem;text-align: center;">
+                    <div class="Icon__image">
+                      <svg width="143" height="142" viewbox="0 0 143 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="71.511" cy="71" rx="70.6926" ry="71" fill="#FBFBFB"></ellipse>
+                        <g clip-path="url(#clip0)">
+                          <path
+                            d="M51.4355 61.3477C51.4355 72.8174 60.7263 82.1485 72.1463 82.1485C83.5664 82.1485 92.8571 72.8174 92.8571 61.3477C92.8571 49.878 83.5664 40.5469 72.1463 40.5469C60.7263 40.5469 51.4355 49.878 51.4355 61.3477ZM72.1463 43.3203C82.0438 43.3203 90.0956 51.4072 90.0956 61.3477C90.0956 71.2882 82.0438 79.3751 72.1463 79.3751C62.2488 79.3751 54.197 71.2882 54.197 61.3477C54.197 51.4072 62.2488 43.3203 72.1463 43.3203Z"
+                            fill="#000131"></path>
+                          <path d="M73.5272 36.3867C73.5272 37.1527 72.9091 37.7734 72.1465 37.7734C71.3839 37.7734 70.7658 37.1527 70.7658 36.3867C70.7658 35.6208 71.3839 35 72.1465 35C72.9091 35 73.5272 35.6208 73.5272 36.3867Z" fill="#000131"></path>
+                          <path
+                            d="M65.6391 35.8179C54.0243 38.7956 45.9126 49.294 45.9126 61.3482C45.9126 68.8348 49.0467 75.8892 54.5486 80.8852L46.2303 95.6088C45.9628 96.0828 45.9962 96.67 46.3155 97.1098C46.6348 97.5502 47.1806 97.762 47.7119 97.651L57.1585 95.6809L60.4787 105.078C60.6588 105.589 61.1199 105.947 61.6582 105.995C62.1965 106.043 62.7126 105.771 62.9796 105.299L72.1463 89.1135L81.3124 105.299C81.5594 105.735 82.0189 106 82.5119 106C82.5523 106 82.5933 105.998 82.6338 105.995C83.1721 105.947 83.6332 105.588 83.8139 105.078L87.1335 95.6809L96.5801 97.651C97.1108 97.7615 97.6572 97.5497 97.9765 97.1098C98.2963 96.67 98.3292 96.0828 98.0617 95.6088L89.7434 80.8852C95.2452 75.8892 98.3794 68.8348 98.3794 61.3482C98.3794 49.294 90.2676 38.7956 78.6534 35.8179C77.914 35.6283 77.1627 36.0763 76.9739 36.8184C76.7852 37.5605 77.2312 38.3156 77.9701 38.5052C88.3611 41.1692 95.6185 50.5626 95.6185 61.3482C95.6185 74.4749 85.0037 84.9224 72.1463 84.9224C59.2797 84.9224 48.6741 74.4662 48.6741 61.3482C48.6741 50.5626 55.9309 41.1692 66.3219 38.5052C67.0608 38.3156 67.5068 37.5605 67.3186 36.8184C67.1298 36.0763 66.3785 35.6283 65.6391 35.8179ZM62.0719 101.293L59.3584 93.6138C59.1276 92.9605 58.4523 92.5786 57.7766 92.7195L50.1378 94.3126L56.7211 82.6598C60.5596 85.4625 65.1046 87.1699 69.8309 87.5924L62.0719 101.293ZM86.5154 92.7195C85.8402 92.5786 85.1644 92.9605 84.9335 93.6138L82.2206 101.293L74.4611 87.5924C79.1879 87.1699 83.7324 85.4625 87.5715 82.6598L94.1547 94.3126L86.5154 92.7195Z"
+                            fill="#000131"></path>
+                          <path
+                            d="M80.9158 47.0109L62.2937 60.8237C61.8215 61.174 62.0641 61.9369 62.6466 61.9369H70.79C70.6681 61.856 70.1336 61.6158 69.8365 61.1899C69.3707 60.5212 69.4732 59.8617 69.8378 59.457C69.8624 59.4305 78.9166 49.3847 80.9859 47.0892C81.0196 47.0507 80.9872 47.0003 80.9483 47.0003C80.9379 46.9989 80.9262 47.0029 80.9158 47.0109Z"
+                            fill="#000131"></path>
+                          <path
+                            d="M70.2101 60.0634C70.3321 60.1443 70.8666 60.3845 71.1637 60.8104C71.6294 61.4792 71.5256 62.1386 71.1624 62.5433C71.1377 62.5699 62.0836 72.6157 60.0143 74.9112C59.9715 74.9589 60.0337 75.0279 60.0843 74.9881L78.7064 61.1766C79.1787 60.8263 78.9361 60.0634 78.3536 60.0634H70.2101Z"
+                            fill="#000131"></path>
+                        </g>
+                        <defs>
+                          <clippath id="clip0">
+                            <rect width="70.6926" height="71" fill="white" transform="translate(36.6621 35)"></rect>
+                          </clippath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <h4 class="Icon__title" style="margin-bottom: 0;text-transform: uppercase;color: #000131;font-weight: 300;font-size: 15px;">Productos hechos con <br> pasión y calidad saeta ⚡</h4>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- * Footer information -->
+            <tr>
+              <td>
+                <div class="Footer" style="padding: 2rem;background-color: #FBFBFB;">
+                  <div class="Footer__container" style="display: flex;justify-content: center;align-items: flex-start;padding: 0 0 20px;">
+                    <div class="Socials" style="display: flex;align-items: center;justify-content: space-between;width: 50%;">
+                      <span class="Socials__icon--youtube">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                          <img src="https://saetasport.vteximg.com.br/arquivos/mail-youtube-icono.png" alt="Logo">
+                        </a>
+                      </span>
+                      <span class="Socials__icon--facebook">
+                        <a href="https://www.facebook.com/Saetasport/" target="_blank" rel="noopener noreferrer">
+                          <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M0 15.0838C0 22.5413 5.41625 28.7425 12.5 30V19.1663H8.75V15H12.5V11.6663C12.5 7.91625 14.9163 5.83375 18.3337 5.83375C19.4163 5.83375 20.5837 6 21.6663 6.16625V10H19.75C17.9163 10 17.5 10.9163 17.5 12.0837V15H21.5L20.8337 19.1663H17.5V30C24.5837 28.7425 30 22.5425 30 15.0838C30 6.7875 23.25 0 15 0C6.75 0 0 6.7875 0 15.0838Z"
+                              fill="#FBCE2F"></path>
+                          </svg>
+                        </a>
+                      </span>
+                      <span class="Socials__icon--instagram">
+                        <a href="https://www.instagram.com/saetasport/" target="_blank" rel="noopener noreferrer">
+                          <svg width="35" height="35" viewbox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M17.4992 12.9434C14.9904 12.9434 12.943 14.9908 12.943 17.4996C12.943 20.0083 14.9904 22.0557 17.4992 22.0557C20.008 22.0557 22.0553 20.0083 22.0553 17.4996C22.0553 14.9908 20.008 12.9434 17.4992 12.9434ZM31.1642 17.4996C31.1642 15.6128 31.1813 13.7432 31.0754 11.8599C30.9694 9.6724 30.4704 7.731 28.8708 6.13139C27.2677 4.52836 25.3298 4.03275 23.1423 3.9268C21.2555 3.82084 19.3859 3.83793 17.5026 3.83793C15.6159 3.83793 13.7463 3.82084 11.863 3.9268C9.67546 4.03275 7.73405 4.53178 6.13444 6.13139C4.53141 7.73441 4.03581 9.6724 3.92985 11.8599C3.82389 13.7466 3.84098 15.6163 3.84098 17.4996C3.84098 19.3829 3.82389 21.2559 3.92985 23.1392C4.03581 25.3267 4.53483 27.2681 6.13444 28.8677C7.73747 30.4707 9.67546 30.9663 11.863 31.0723C13.7497 31.1783 15.6193 31.1612 17.5026 31.1612C19.3893 31.1612 21.259 31.1783 23.1423 31.0723C25.3298 30.9663 27.2712 30.4673 28.8708 28.8677C30.4738 27.2647 30.9694 25.3267 31.0754 23.1392C31.1847 21.2559 31.1642 19.3863 31.1642 17.4996ZM17.4992 24.5098C13.6198 24.5098 10.4889 21.3789 10.4889 17.4996C10.4889 13.6202 13.6198 10.4893 17.4992 10.4893C21.3786 10.4893 24.5094 13.6202 24.5094 17.4996C24.5094 21.3789 21.3786 24.5098 17.4992 24.5098ZM24.7965 11.8394C23.8908 11.8394 23.1593 11.108 23.1593 10.2022C23.1593 9.29643 23.8908 8.56498 24.7965 8.56498C25.7023 8.56498 26.4338 9.29643 26.4338 10.2022C26.434 10.4173 26.3919 10.6303 26.3097 10.829C26.2275 11.0278 26.1069 11.2084 25.9548 11.3605C25.8027 11.5126 25.6222 11.6331 25.4234 11.7153C25.2246 11.7975 25.0116 11.8397 24.7965 11.8394Z"
+                              fill="#FBCE2F"></path>
+                          </svg>
+                        </a>
+                      </span>
+                      <span class="Socials__icon--saeta">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                          <svg width="108" height="15" viewbox="0 0 108 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M10.2381 10.3775C10.0681 10.5125 9.78809 10.65 9.39809 10.79C9.01309 10.93 8.55309 11.0475 8.01809 11.1425C7.48309 11.2425 6.92559 11.2925 6.34559 11.2925C5.36559 11.2925 4.44559 11.1225 3.58559 10.7825C2.72559 10.4425 2.02559 9.9075 1.48559 9.1775C0.945586 8.4475 0.675586 7.5325 0.675586 6.4325C0.675586 5.2225 0.990586 4.185 1.62059 3.32C2.25059 2.455 3.11309 1.8 4.20809 1.355C5.30809 0.909999 6.55059 0.687499 7.93559 0.687499C9.14059 0.687499 10.1831 0.867499 11.0631 1.2275C11.9431 1.5875 12.6131 2.0925 13.0731 2.7425C13.5381 3.3925 13.7706 4.14 13.7706 4.985C13.7706 5.855 13.5831 6.5925 13.2081 7.1975C12.8381 7.8025 12.3631 8.255 11.7831 8.555C11.2081 8.85 10.6106 9 9.99059 9.005C9.65559 9.005 9.36559 8.945 9.12059 8.825C8.88059 8.705 8.69809 8.555 8.57309 8.375C8.45309 8.195 8.39809 8.0225 8.40809 7.8575C8.36309 7.9975 8.26059 8.1325 8.10059 8.2625C7.94059 8.3925 7.73059 8.4975 7.47059 8.5775C7.21059 8.6575 6.91559 8.6975 6.58559 8.6975C6.19059 8.6975 5.83309 8.6075 5.51309 8.4275C5.19809 8.2475 4.94809 7.98 4.76309 7.625C4.57809 7.265 4.48559 6.83 4.48559 6.32C4.48559 5.68 4.60559 5.125 4.84559 4.655C5.08559 4.185 5.39809 3.83 5.78309 3.59C6.17309 3.345 6.58809 3.2225 7.02809 3.2225C7.28809 3.2225 7.51309 3.27 7.70309 3.365C7.89809 3.455 8.04559 3.565 8.14559 3.695C8.24559 3.82 8.29809 3.935 8.30309 4.04L8.38559 3.32H9.62309L9.24809 7.0775L9.24059 7.175C9.24059 7.405 9.31309 7.575 9.45809 7.685C9.60809 7.795 9.79809 7.85 10.0281 7.85C10.3331 7.85 10.6006 7.745 10.8306 7.535C11.0656 7.32 11.2481 7.0125 11.3781 6.6125C11.5131 6.2125 11.5881 5.7325 11.6031 5.1725C11.6231 4.5425 11.4781 4.005 11.1681 3.56C10.8631 3.11 10.4106 2.7675 9.81059 2.5325C9.21559 2.2925 8.49809 2.1725 7.65809 2.1725C6.75809 2.1725 5.94559 2.335 5.22059 2.66C4.49559 2.98 3.92059 3.455 3.49559 4.085C3.07559 4.71 2.86559 5.4625 2.86559 6.3425C2.86559 7.1175 3.03809 7.765 3.38309 8.285C3.72809 8.805 4.17559 9.19 4.72559 9.44C5.28059 9.685 5.87559 9.8075 6.51059 9.8075C6.94559 9.8075 7.33309 9.7675 7.67309 9.6875C8.01809 9.6025 8.29309 9.5075 8.49809 9.4025C8.70309 9.2975 8.83059 9.215 8.88059 9.155L10.2381 10.3775ZM7.02059 7.595C7.26059 7.595 7.47059 7.535 7.65059 7.415C7.83059 7.29 7.94309 7.1425 7.98809 6.9725L8.15309 5.045C8.14809 4.845 8.05559 4.685 7.87559 4.565C7.70059 4.445 7.50809 4.385 7.29809 4.385C7.11309 4.385 6.92809 4.465 6.74309 4.625C6.56309 4.785 6.41309 4.9975 6.29309 5.2625C6.17309 5.5275 6.11059 5.805 6.10559 6.095C6.10059 6.39 6.13559 6.6525 6.21059 6.8825C6.28559 7.1075 6.39309 7.2825 6.53309 7.4075C6.67309 7.5325 6.83559 7.595 7.02059 7.595ZM16.8799 8.1425C17.0399 8.6325 17.3349 8.9725 17.7649 9.1625C18.1999 9.3525 18.6874 9.4475 19.2274 9.4475C19.8224 9.4475 20.2474 9.3725 20.5024 9.2225C20.7624 9.0725 20.8924 8.8825 20.8924 8.6525C20.8924 8.3025 20.6974 8.0775 20.3074 7.9775C19.9224 7.8725 19.3499 7.7825 18.5899 7.7075C17.5299 7.6125 16.6449 7.4025 15.9349 7.0775C15.2299 6.7525 14.8774 6.1525 14.8774 5.2775C14.8774 4.4075 15.2799 3.7875 16.0849 3.4175C16.8949 3.0425 17.9174 2.855 19.1524 2.855C20.3474 2.855 21.3174 3.0125 22.0624 3.3275C22.8074 3.6375 23.2899 4.145 23.5099 4.85L21.3724 5.765C21.2074 5.33 20.9399 5.0075 20.5699 4.7975C20.2049 4.5825 19.7349 4.475 19.1599 4.475C18.5649 4.475 18.1299 4.5525 17.8549 4.7075C17.5849 4.8625 17.4499 5.055 17.4499 5.285C17.4499 5.595 17.6574 5.7975 18.0724 5.8925C18.4924 5.9825 19.0574 6.065 19.7674 6.14C20.8374 6.245 21.7224 6.47 22.4224 6.815C23.1224 7.155 23.4724 7.735 23.4724 8.555C23.4724 9.505 23.0774 10.1625 22.2874 10.5275C21.5024 10.8875 20.4899 11.0675 19.2499 11.0675C18.1399 11.0675 17.1674 10.915 16.3324 10.61C15.5024 10.305 14.9649 9.7675 14.7199 8.9975L16.8799 8.1425ZM30.4793 9.74V5.9675C30.4793 5.4725 30.3418 5.105 30.0668 4.865C29.7968 4.625 29.4068 4.505 28.8968 4.505C28.4168 4.505 28.0268 4.62 27.7268 4.85C27.4268 5.08 27.2443 5.4325 27.1793 5.9075L24.5918 5.24C24.6918 4.765 25.0293 4.2425 25.6043 3.6725C26.1843 3.1025 27.2868 2.8175 28.9118 2.8175C30.6268 2.8175 31.7543 3.1625 32.2943 3.8525C32.8343 4.5375 33.1043 5.445 33.1043 6.575V11H30.8918L30.4793 9.74ZM31.4318 8.765C31.3568 9.54 31.0018 10.1225 30.3668 10.5125C29.7368 10.9025 28.8793 11.0975 27.7943 11.0975C26.7743 11.0975 25.9593 10.905 25.3493 10.52C24.7443 10.13 24.4418 9.52 24.4418 8.69C24.4418 7.935 24.7243 7.3775 25.2893 7.0175C25.8593 6.6575 26.6168 6.4225 27.5618 6.3125C28.3018 6.2175 29.3218 6.17 30.6218 6.17V7.505C29.8718 7.53 29.2418 7.56 28.7318 7.595C28.1068 7.635 27.6843 7.725 27.4643 7.865C27.2493 8 27.1418 8.225 27.1418 8.54C27.1418 8.81 27.2393 9.0325 27.4343 9.2075C27.6343 9.3775 27.9518 9.4625 28.3868 9.4625C29.1218 9.4625 29.6568 9.37 29.9918 9.185C30.3318 9 30.5168 8.6025 30.5468 7.9925L31.4318 8.765ZM42.9102 9.0575C42.9102 9.3875 42.6052 9.81 41.9952 10.325C41.3902 10.835 40.3027 11.09 38.7327 11.09C36.9777 11.09 35.7977 10.72 35.1927 9.98C34.5927 9.235 34.2927 8.2325 34.2927 6.9725C34.2927 5.6825 34.6052 4.6675 35.2302 3.9275C35.8602 3.1875 37.0277 2.8175 38.7327 2.8175C40.4777 2.8175 41.6527 3.1825 42.2577 3.9125C42.8627 4.6425 43.1652 5.6575 43.1652 6.9575C43.1602 7.2125 43.1502 7.435 43.1352 7.625H36.5802V6.2375H40.6602L40.5177 6.4625C40.5177 5.6925 40.3702 5.1675 40.0752 4.8875C39.7852 4.6075 39.3377 4.4675 38.7327 4.4675C38.1127 4.4675 37.6377 4.6075 37.3077 4.8875C36.9777 5.1675 36.8127 5.8625 36.8127 6.9725C36.8127 8.0575 36.9752 8.7425 37.3002 9.0275C37.6302 9.3075 38.1077 9.4475 38.7327 9.4475C39.3527 9.4475 39.8227 9.3325 40.1427 9.1025C40.4677 8.8725 40.6302 8.58 40.6302 8.225L42.9102 9.0575ZM48.3799 11.1125C47.5349 11.1125 46.8599 10.9475 46.3549 10.6175C45.8549 10.2825 45.6049 9.6875 45.6049 8.8325V4.52H43.7974V2.96H45.6049V1.235H48.2224V2.96H50.8399V4.52H48.2224V8.33C48.2224 8.79 48.3024 9.0925 48.4624 9.2375C48.6224 9.3825 48.8799 9.455 49.2349 9.455C49.5549 9.45 49.9399 9.41 50.3899 9.335V10.9775C49.6099 11.0675 48.9399 11.1125 48.3799 11.1125ZM57.7986 9.74V5.9675C57.7986 5.4725 57.6611 5.105 57.3861 4.865C57.1161 4.625 56.7261 4.505 56.2161 4.505C55.7361 4.505 55.3461 4.62 55.0461 4.85C54.7461 5.08 54.5636 5.4325 54.4986 5.9075L51.9111 5.24C52.0111 4.765 52.3486 4.2425 52.9236 3.6725C53.5036 3.1025 54.6061 2.8175 56.2311 2.8175C57.9461 2.8175 59.0736 3.1625 59.6136 3.8525C60.1536 4.5375 60.4236 5.445 60.4236 6.575V11H58.2111L57.7986 9.74ZM58.7511 8.765C58.6761 9.54 58.3211 10.1225 57.6861 10.5125C57.0561 10.9025 56.1986 11.0975 55.1136 11.0975C54.0936 11.0975 53.2786 10.905 52.6686 10.52C52.0636 10.13 51.7611 9.52 51.7611 8.69C51.7611 7.935 52.0436 7.3775 52.6086 7.0175C53.1786 6.6575 53.9361 6.4225 54.8811 6.3125C55.6211 6.2175 56.6411 6.17 57.9411 6.17V7.505C57.1911 7.53 56.5611 7.56 56.0511 7.595C55.4261 7.635 55.0036 7.725 54.7836 7.865C54.5686 8 54.4611 8.225 54.4611 8.54C54.4611 8.81 54.5586 9.0325 54.7536 9.2075C54.9536 9.3775 55.2711 9.4625 55.7061 9.4625C56.4411 9.4625 56.9761 9.37 57.3111 9.185C57.6511 9 57.8361 8.6025 57.8661 7.9925L58.7511 8.765ZM63.667 8.1425C63.827 8.6325 64.122 8.9725 64.552 9.1625C64.987 9.3525 65.4745 9.4475 66.0145 9.4475C66.6095 9.4475 67.0345 9.3725 67.2895 9.2225C67.5495 9.0725 67.6795 8.8825 67.6795 8.6525C67.6795 8.3025 67.4845 8.0775 67.0945 7.9775C66.7095 7.8725 66.137 7.7825 65.377 7.7075C64.317 7.6125 63.432 7.4025 62.722 7.0775C62.017 6.7525 61.6645 6.1525 61.6645 5.2775C61.6645 4.4075 62.067 3.7875 62.872 3.4175C63.682 3.0425 64.7045 2.855 65.9395 2.855C67.1345 2.855 68.1045 3.0125 68.8495 3.3275C69.5945 3.6375 70.077 4.145 70.297 4.85L68.1595 5.765C67.9945 5.33 67.727 5.0075 67.357 4.7975C66.992 4.5825 66.522 4.475 65.947 4.475C65.352 4.475 64.917 4.5525 64.642 4.7075C64.372 4.8625 64.237 5.055 64.237 5.285C64.237 5.595 64.4445 5.7975 64.8595 5.8925C65.2795 5.9825 65.8445 6.065 66.5545 6.14C67.6245 6.245 68.5095 6.47 69.2095 6.815C69.9095 7.155 70.2595 7.735 70.2595 8.555C70.2595 9.505 69.8645 10.1625 69.0745 10.5275C68.2895 10.8875 67.277 11.0675 66.037 11.0675C64.927 11.0675 63.9545 10.915 63.1195 10.61C62.2895 10.305 61.752 9.7675 61.507 8.9975L63.667 8.1425ZM76.5614 11.0675C75.6214 11.0675 74.8939 10.8675 74.3789 10.4675C73.8689 10.0625 73.5789 9.495 73.5089 8.765L74.0339 8.195C74.1189 8.555 74.3114 8.84 74.6114 9.05C74.9164 9.255 75.3239 9.3575 75.8339 9.3575C76.3139 9.3575 76.6939 9.2175 76.9739 8.9375C77.2539 8.6525 77.3939 7.9875 77.3939 6.9425C77.3939 5.9125 77.2539 5.255 76.9739 4.97C76.6939 4.68 76.3139 4.535 75.8339 4.535C75.3189 4.535 74.9114 4.665 74.6114 4.925C74.3114 5.18 74.1189 5.4675 74.0339 5.7875L73.5089 5.135C73.5789 4.45 73.8764 3.895 74.4014 3.47C74.9264 3.04 75.6539 2.825 76.5839 2.825C77.9139 2.825 78.8164 3.2 79.2914 3.95C79.7664 4.7 80.0039 5.695 80.0039 6.935C80.0039 8.17 79.7664 9.1675 79.2914 9.9275C78.8164 10.6875 77.9064 11.0675 76.5614 11.0675ZM71.4239 2.96H73.9214L74.0339 4.34V14.78H71.4239V2.96ZM85.4398 11.0675C83.7548 11.0675 82.5898 10.7225 81.9448 10.0325C81.2998 9.3375 80.9773 8.31 80.9773 6.95C80.9773 5.59 81.2998 4.5625 81.9448 3.8675C82.5898 3.1725 83.7548 2.825 85.4398 2.825C87.1198 2.825 88.2798 3.1775 88.9198 3.8825C89.5648 4.5875 89.8873 5.62 89.8873 6.98C89.8873 8.34 89.5648 9.3625 88.9198 10.0475C88.2798 10.7275 87.1198 11.0675 85.4398 11.0675ZM85.4398 9.3575C86.0048 9.3575 86.4523 9.215 86.7823 8.93C87.1123 8.64 87.2773 7.98 87.2773 6.95C87.2773 5.92 87.1123 5.26 86.7823 4.97C86.4523 4.68 86.0048 4.535 85.4398 4.535C84.8698 4.535 84.4173 4.68 84.0823 4.97C83.7523 5.26 83.5873 5.92 83.5873 6.95C83.5873 7.98 83.7523 8.64 84.0823 8.93C84.4173 9.215 84.8698 9.3575 85.4398 9.3575ZM96.6471 7.13C96.6471 5.915 96.5346 5.18 96.3096 4.925C96.0846 4.665 95.7571 4.535 95.3271 4.535C94.8221 4.535 94.4171 4.665 94.1121 4.925C93.8121 5.18 93.6221 5.4675 93.5421 5.7875L93.0696 5.135C93.1396 4.47 93.4771 3.92 94.0821 3.485C94.6871 3.045 95.4171 2.825 96.2721 2.825C97.4371 2.825 98.2246 3.1525 98.6346 3.8075C99.0496 4.4625 99.2571 5.57 99.2571 7.13H96.6471ZM90.9396 2.96H93.4446L93.5496 4.7825V11H90.9396V2.96ZM104.806 11.1125C103.961 11.1125 103.286 10.9475 102.781 10.6175C102.281 10.2825 102.031 9.6875 102.031 8.8325V4.52H100.223V2.96H102.031V1.235H104.648V2.96H107.266V4.52H104.648V8.33C104.648 8.79 104.728 9.0925 104.888 9.2375C105.048 9.3825 105.306 9.455 105.661 9.455C105.981 9.45 106.366 9.41 106.816 9.335V10.9775C106.036 11.0675 105.366 11.1125 104.806 11.1125Z"
+                              fill="#000131"></path>
+                          </svg>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="Footer__container Footer__container--bottom" style="display: flex;justify-content: center;align-items: center;padding: 0;">
+                    <p class="Footer__text" style="margin: 0 0 0.5rem;text-align: center;font-weight: 300;font-size: 15px;">
+                      <a href="#" class="Footer__link" style="text-decoration: none;font-size: 14px;color: #565656;">Términos y condiciones</a> |
+                      <a href="#" class="Footer__link" style="text-decoration: none;font-size: 14px;color: #565656;">Políticas de envío cambios y garantías</a> |
+                      <a href="#" class="Footer__link" style="text-decoration: none;font-size: 14px;color: #565656;">Políticas de privacidad</a>
+                      <br>
+                      <a href="mailto:paginaweb@saetasport.com" class="Footer__link Footer__link--underline" style="text-decoration: underline;font-size: 14px;color: #565656;">paginaweb@saetasport.com</a> |
+                      <span class="Footer__link" style="text-decoration: none;font-size: 14px;color: #565656;">Saeta S.A.S</span> |
+                      <span class="Footer__link" style="text-decoration: none;font-size: 14px;color: #565656;">NIT 860520782-2</span>
+                      <br>
+                      <span class="Footer__link" style="text-decoration: none;font-size: 14px;color: #565656;">2021 © Todos los derechos Reservados</span>
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
